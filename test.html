@@ -71,7 +71,7 @@
         .nav {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
             margin-bottom: 30px;
         }
@@ -80,10 +80,10 @@
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
             color: #c8c8d4;
-            padding: 10px 20px;
+            padding: 10px 18px;
             border-radius: 30px;
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
             font-family: inherit;
         }
@@ -157,7 +157,7 @@
 
         .card ul {
             color: #d0d0dc;
-            line-height: 2;
+            line-height: 2.2;
             padding-left: 25px;
             font-size: 1.05rem;
         }
@@ -181,6 +181,227 @@
             font-weight: 600;
         }
 
+        /* ============ TABLE ============ */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .table-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table-wrap th {
+            background: rgba(79, 172, 254, 0.2);
+            color: #4facfe;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .table-wrap td {
+            padding: 10px 15px;
+            color: #d0d0dc;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .table-wrap tr:hover td {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* ============ TIMELINE ============ */
+        .timeline {
+            padding-left: 20px;
+            border-left: 3px solid #4facfe;
+        }
+
+        .timeline-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #4facfe;
+            border: 2px solid #0f0c29;
+        }
+
+        .timeline-item .year {
+            color: #4facfe;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .timeline-item .desc {
+            color: #b0b0c0;
+            margin-top: 3px;
+        }
+
+        /* ============ CODE BLOCK ============ */
+        .code-block {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.95rem;
+            color: #e8e8f0;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .code-block .comment { color: #6a9955; }
+        .code-block .keyword { color: #c586c0; }
+        .code-block .string { color: #ce9178; }
+        .code-block .function { color: #dcdcaa; }
+        .code-block .number { color: #b5cea8; }
+        .code-block .type { color: #4ec9b0; }
+        .code-block .preprocessor { color: #9cdcfe; }
+        .code-block .operator { color: #d4d4d4; }
+
+        /* ============ FEATURE GRID ============ */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .feature-grid .feature-card {
+            background: rgba(79, 172, 254, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 3px solid #4facfe;
+        }
+
+        .feature-grid .feature-card h4 {
+            color: #4facfe;
+            margin-bottom: 8px;
+        }
+
+        .feature-grid .feature-card p {
+            color: #b0b0c0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .feature-grid .feature-card.card-pink {
+            border-left-color: #f5576c;
+        }
+        .feature-grid .feature-card.card-pink h4 {
+            color: #f5576c;
+        }
+
+        .feature-grid .feature-card.card-green {
+            border-left-color: #6a9955;
+        }
+        .feature-grid .feature-card.card-green h4 {
+            color: #6a9955;
+        }
+
+        .feature-grid .feature-card.card-purple {
+            border-left-color: #c586c0;
+        }
+        .feature-grid .feature-card.card-purple h4 {
+            color: #c586c0;
+        }
+
+        .feature-grid .feature-card.card-orange {
+            border-left-color: #ce9178;
+        }
+        .feature-grid .feature-card.card-orange h4 {
+            color: #ce9178;
+        }
+
+        .feature-grid .feature-card.card-cyan {
+            border-left-color: #00f2fe;
+        }
+        .feature-grid .feature-card.card-cyan h4 {
+            color: #00f2fe;
+        }
+
+        /* ============ STATS ============ */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .stats-grid .stat-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .stats-grid .stat-item .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .stats-grid .stat-item .stat-label {
+            color: #b0b0c0;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* ============ TAGS ============ */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tags .tag {
+            background: rgba(79, 172, 254, 0.15);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(79, 172, 254, 0.2);
+            font-size: 0.9rem;
+        }
+
+        .tags .tag-pink {
+            background: rgba(245, 87, 108, 0.15);
+            border-color: rgba(245, 87, 108, 0.2);
+        }
+
+        .tags .tag-green {
+            background: rgba(106, 153, 85, 0.15);
+            border-color: rgba(106, 153, 85, 0.2);
+        }
+
+        .tags .tag-purple {
+            background: rgba(192, 134, 192, 0.15);
+            border-color: rgba(192, 134, 192, 0.2);
+        }
+
+        .tags .tag-orange {
+            background: rgba(206, 145, 120, 0.15);
+            border-color: rgba(206, 145, 120, 0.2);
+        }
+
+        .tags .tag-cyan {
+            background: rgba(0, 242, 254, 0.15);
+            border-color: rgba(0, 242, 254, 0.2);
+        }
+
         /* ============ CODE EDITOR ============ */
         .code-editor-wrapper {
             background: #1a1a2e;
@@ -197,6 +418,8 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .code-editor-header .title {
@@ -217,7 +440,8 @@
 
         .code-editor-header .actions {
             display: flex;
-            gap: 10px;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .code-editor-header .actions button {
@@ -418,237 +642,343 @@
             width: 0%;
         }
 
-        /* ============ FEATURE GRID ============ */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
+        /* ============ AI CHAT ============ */
+        .ai-chat-wrapper {
+            background: #1a1a2e;
+            border-radius: 12px;
+            border: 2px solid rgba(79, 172, 254, 0.2);
+            overflow: hidden;
             margin: 15px 0;
+            max-height: 600px;
+            display: flex;
+            flex-direction: column;
         }
 
-        .feature-grid .feature-card {
-            background: rgba(79, 172, 254, 0.05);
-            border-radius: 10px;
-            padding: 15px;
-            border-left: 3px solid #4facfe;
+        .ai-chat-header {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
         }
 
-        .feature-grid .feature-card h4 {
-            color: #4facfe;
-            margin-bottom: 8px;
+        .ai-chat-header .ai-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
         }
 
-        .feature-grid .feature-card p {
-            color: #b0b0c0;
-            font-size: 0.95rem;
+        .ai-chat-header .ai-name {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .ai-chat-header .ai-status {
+            color: #6a9955;
+            font-size: 0.8rem;
+            margin-left: auto;
+        }
+
+        .ai-chat-body {
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;
+            max-height: 400px;
+            min-height: 200px;
+        }
+
+        .ai-chat-body::-webkit-scrollbar {
+            width: 6px;
+        }
+        .ai-chat-body::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .ai-chat-body::-webkit-scrollbar-thumb {
+            background: rgba(79, 172, 254, 0.3);
+            border-radius: 3px;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 12px;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-message.user {
+            flex-direction: row-reverse;
+        }
+
+        .chat-message .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .chat-message.user .avatar {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .chat-message.ai .avatar {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .chat-message .bubble {
+            max-width: 80%;
+            padding: 12px 18px;
+            border-radius: 12px;
             line-height: 1.6;
+            font-size: 0.95rem;
+            word-wrap: break-word;
         }
 
-        .feature-grid .feature-card.card-pink {
-            border-left-color: #f5576c;
+        .chat-message.user .bubble {
+            background: rgba(79, 172, 254, 0.2);
+            border: 1px solid rgba(79, 172, 254, 0.2);
+            color: #d0d0dc;
         }
-        .feature-grid .feature-card.card-pink h4 {
+
+        .chat-message.ai .bubble {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #e8e8f0;
+        }
+
+        .chat-message .bubble .highlight-text {
             color: #f5576c;
         }
 
-        .feature-grid .feature-card.card-green {
-            border-left-color: #6a9955;
-        }
-        .feature-grid .feature-card.card-green h4 {
-            color: #6a9955;
-        }
-
-        .feature-grid .feature-card.card-purple {
-            border-left-color: #c586c0;
-        }
-        .feature-grid .feature-card.card-purple h4 {
-            color: #c586c0;
+        .chat-message .bubble .code-inline {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.85rem;
+            color: #4facfe;
         }
 
-        .feature-grid .feature-card.card-orange {
-            border-left-color: #ce9178;
-        }
-        .feature-grid .feature-card.card-orange h4 {
-            color: #ce9178;
-        }
-
-        .feature-grid .feature-card.card-cyan {
-            border-left-color: #00f2fe;
-        }
-        .feature-grid .feature-card.card-cyan h4 {
-            color: #00f2fe;
+        .ai-chat-footer {
+            padding: 15px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+            flex-wrap: wrap;
         }
 
-        /* ============ STATS ============ */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .stats-grid .stat-item {
-            text-align: center;
+        .ai-chat-footer input {
+            flex: 1;
+            padding: 10px 16px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            color: #e8e8f0;
+            font-size: 0.95rem;
+            outline: none;
+            font-family: inherit;
+            min-width: 200px;
         }
 
-        .stats-grid .stat-item .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
+        .ai-chat-footer input:focus {
+            border-color: #4facfe;
+            box-shadow: 0 0 20px rgba(79, 172, 254, 0.1);
         }
 
-        .stats-grid .stat-item .stat-label {
-            color: #b0b0c0;
-            font-size: 0.9rem;
-            margin-top: 5px;
+        .ai-chat-footer input::placeholder {
+            color: #6a6a7a;
         }
 
-        /* ============ TAGS ============ */
-        .tags {
+        .ai-chat-footer button {
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .ai-chat-footer button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 25px rgba(79, 172, 254, 0.4);
+        }
+
+        .ai-chat-footer button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ============ SUGGESTION CHIPS ============ */
+        .suggestion-chips {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
             margin-top: 10px;
         }
 
-        .tags .tag {
-            background: rgba(79, 172, 254, 0.15);
-            padding: 8px 16px;
-            border-radius: 20px;
+        .suggestion-chips .chip {
+            background: rgba(79, 172, 254, 0.1);
             border: 1px solid rgba(79, 172, 254, 0.2);
-            font-size: 0.9rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #b0b0c0;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .tags .tag-pink {
-            background: rgba(245, 87, 108, 0.15);
-            border-color: rgba(245, 87, 108, 0.2);
+        .suggestion-chips .chip:hover {
+            background: rgba(79, 172, 254, 0.2);
+            border-color: #4facfe;
+            color: #fff;
+            transform: translateY(-2px);
         }
 
-        .tags .tag-green {
-            background: rgba(106, 153, 85, 0.15);
-            border-color: rgba(106, 153, 85, 0.2);
+        /* ============ TYPING INDICATOR ============ */
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 8px 0;
         }
 
-        .tags .tag-purple {
-            background: rgba(192, 134, 192, 0.15);
-            border-color: rgba(192, 134, 192, 0.2);
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4facfe;
+            animation: typing 1.4s infinite both;
         }
 
-        .tags .tag-orange {
-            background: rgba(206, 145, 120, 0.15);
-            border-color: rgba(206, 145, 120, 0.2);
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
         }
 
-        .tags .tag-cyan {
-            background: rgba(0, 242, 254, 0.15);
-            border-color: rgba(0, 242, 254, 0.2);
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+            40% { transform: scale(1); opacity: 1; }
         }
 
-        /* ============ TABLE ============ */
-        .table-wrap {
-            overflow-x: auto;
+        /* ============ QUIZ ============ */
+        .quiz-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
             margin: 15px 0;
         }
 
-        .table-wrap table {
-            width: 100%;
-            border-collapse: collapse;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            overflow: hidden;
+        .quiz-box .question {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
         }
 
-        .table-wrap th {
-            background: rgba(79, 172, 254, 0.2);
-            color: #4facfe;
-            padding: 12px 15px;
-            text-align: left;
+        .quiz-box .options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .quiz-box .options label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            color: #d0d0dc;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-box .options label:hover {
+            background: rgba(79, 172, 254, 0.1);
+            border-color: rgba(79, 172, 254, 0.3);
+        }
+
+        .quiz-box .options input[type="radio"] {
+            accent-color: #4facfe;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .btn-check {
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            border: none;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-family: inherit;
+        }
+
+        .btn-check:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 25px rgba(79, 172, 254, 0.4);
+        }
+
+        .quiz-result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
             font-weight: 600;
         }
 
-        .table-wrap td {
-            padding: 10px 15px;
-            color: #d0d0dc;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .table-wrap tr:hover td {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        /* ============ TIMELINE ============ */
-        .timeline {
-            padding-left: 20px;
-            border-left: 3px solid #4facfe;
-        }
-
-        .timeline-item {
-            margin-bottom: 15px;
-            padding-left: 15px;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -24px;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #4facfe;
-            border: 2px solid #0f0c29;
-        }
-
-        .timeline-item .year {
-            color: #4facfe;
-            font-weight: 700;
-        }
-
-        .timeline-item .desc {
-            color: #b0b0c0;
-            margin-top: 3px;
-        }
-
-        /* ============ CODE BLOCK ============ */
-        .code-block {
-            background: #1a1a2e;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 15px 0;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            overflow-x: auto;
-        }
-
-        .code-block pre {
-            font-family: 'Consolas', 'Courier New', monospace;
-            font-size: 0.95rem;
-            color: #e8e8f0;
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        .code-block .comment {
+        .quiz-result.correct {
+            display: block;
+            background: rgba(106, 153, 85, 0.3);
+            border: 1px solid #6a9955;
             color: #6a9955;
         }
-        .code-block .keyword {
-            color: #c586c0;
+
+        .quiz-result.wrong {
+            display: block;
+            background: rgba(245, 87, 108, 0.3);
+            border: 1px solid #f5576c;
+            color: #f5576c;
         }
-        .code-block .string {
-            color: #ce9178;
-        }
-        .code-block .function {
-            color: #dcdcaa;
-        }
-        .code-block .number {
-            color: #b5cea8;
-        }
-        .code-block .type {
-            color: #4ec9b0;
-        }
-        .code-block .preprocessor {
-            color: #9cdcfe;
+
+        .quiz-result.info {
+            display: block;
+            background: rgba(79, 172, 254, 0.3);
+            border: 1px solid #4facfe;
+            color: #4facfe;
         }
 
         /* ============ RESPONSIVE ============ */
@@ -676,37 +1006,70 @@
             .stats-grid {
                 grid-template-columns: 1fr 1fr;
             }
-        }
-
-        @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
+            .chat-message .bubble {
+                max-width: 90%;
+                font-size: 0.85rem;
             }
-            .header h1 {
-                font-size: 1.5rem;
+            .ai-chat-footer {
+                flex-direction: column;
+            }
+            .ai-chat-footer button {
+                width: 100%;
             }
             .code-editor-header {
                 flex-direction: column;
-                gap: 10px;
+                align-items: stretch;
             }
             .code-editor-header .actions {
-                flex-wrap: wrap;
                 justify-content: center;
             }
         }
 
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav button {
+                padding: 6px 10px;
+                font-size: 0.7rem;
+            }
+            .ai-chat-header .ai-name {
+                font-size: 0.85rem;
+            }
+            .suggestion-chips .chip {
+                font-size: 0.7rem;
+                padding: 4px 10px;
+            }
+            .card {
+                padding: 15px;
+            }
+            .table-wrap table {
+                font-size: 0.8rem;
+            }
+            .code-block pre {
+                font-size: 0.75rem;
+            }
+        }
+
         /* ============ SCROLLBAR ============ */
-        .output-body::-webkit-scrollbar {
+        .output-body::-webkit-scrollbar,
+        .ai-chat-body::-webkit-scrollbar {
             width: 6px;
         }
-        .output-body::-webkit-scrollbar-track {
+        .output-body::-webkit-scrollbar-track,
+        .ai-chat-body::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.05);
         }
-        .output-body::-webkit-scrollbar-thumb {
+        .output-body::-webkit-scrollbar-thumb,
+        .ai-chat-body::-webkit-scrollbar-thumb {
             background: rgba(79, 172, 254, 0.3);
             border-radius: 3px;
         }
-        .output-body::-webkit-scrollbar-thumb:hover {
+        .output-body::-webkit-scrollbar-thumb:hover,
+        .ai-chat-body::-webkit-scrollbar-thumb:hover {
             background: rgba(79, 172, 254, 0.5);
         }
     </style>
@@ -716,8 +1079,8 @@
         <!-- ==================== HEADER ==================== -->
         <div class="header">
             <h1>⚡ C++ Toàn Tập</h1>
-            <p class="subtitle">Học lý thuyết - Thực hành code - Kiểm tra lỗi - Chinh phục mọi bài tập</p>
-            <span class="badge">🎯 12+ Bài học | 10+ Ví dụ | 8 Bài tập thực hành</span>
+            <p class="subtitle">Học lý thuyết - Thực hành code - Hỏi AI - Chinh phục mọi bài tập</p>
+            <span class="badge">🎯 12+ Bài học | 10+ Ví dụ | 8 Bài tập | 🤖 Trợ lý AI</span>
             <div class="progress-bar">
                 <div class="progress" id="progressBar"></div>
             </div>
@@ -733,6 +1096,7 @@
             <button data-section="advanced">🚀 Nâng cao</button>
             <button data-section="editor">💻 Code Editor</button>
             <button data-section="challenges">🏆 Bài tập</button>
+            <button data-section="aiassistant">🤖 Hỏi AI</button>
             <button data-section="quiz">🧠 Quiz</button>
         </div>
 
@@ -755,27 +1119,43 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="year">1985</div>
-                        <div class="desc">Phiên bản đầu tiên "C with Classes"</div>
+                        <div class="desc">Phiên bản đầu tiên "C with Classes" - Bjarne Stroustrup giới thiệu C++</div>
                     </div>
                     <div class="timeline-item">
                         <div class="year">1989</div>
-                        <div class="desc">C++ 2.0 với đa kế thừa</div>
+                        <div class="desc">C++ 2.0 với đa kế thừa (Multiple Inheritance)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1990</div>
+                        <div class="desc">C++ 3.0 với template và exception handling</div>
                     </div>
                     <div class="timeline-item">
                         <div class="year">1998</div>
-                        <div class="desc">C++98 chuẩn hóa lần đầu (ISO)</div>
+                        <div class="desc">C++98 - Chuẩn hóa lần đầu bởi ISO (International Organization for Standardization)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2003</div>
+                        <div class="desc">C++03 - Bản sửa lỗi của C++98</div>
                     </div>
                     <div class="timeline-item">
                         <div class="year">2011</div>
-                        <div class="desc">C++11 với auto, lambda, move semantics</div>
+                        <div class="desc">C++11 - Bước đột phá với auto, lambda, move semantics, smart pointers</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2014</div>
+                        <div class="desc">C++14 - Cải tiến nhỏ từ C++11</div>
                     </div>
                     <div class="timeline-item">
                         <div class="year">2017</div>
-                        <div class="desc">C++17 với filesystem, optional, variant</div>
+                        <div class="desc">C++17 - filesystem, optional, variant, structured bindings</div>
                     </div>
                     <div class="timeline-item">
                         <div class="year">2020</div>
-                        <div class="desc">C++20 với concepts, ranges, coroutines</div>
+                        <div class="desc">C++20 - concepts, ranges, coroutines, modules</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2023</div>
+                        <div class="desc">C++23 - C++ đang tiếp tục phát triển mạnh mẽ</div>
                     </div>
                 </div>
             </div>
@@ -862,22 +1242,27 @@
                 <h3>🔰 Cấu trúc chương trình C++</h3>
                 <div class="code-block">
                     <pre>
-<span class="comment">// Chương trình Hello World</span>
-<span class="preprocessor">#include</span> &lt;iostream&gt;
+<span class="comment">// Chương trình Hello World - Mọi con đường đều bắt đầu từ đây</span>
+<span class="preprocessor">#include</span> &lt;iostream&gt;     <span class="comment">// Thư viện nhập/xuất</span>
+<span class="preprocessor">#include</span> &lt;string&gt;       <span class="comment">// Thư viện xử lý chuỗi</span>
 
-<span class="keyword">using</span> <span class="keyword">namespace</span> std;
+<span class="keyword">using</span> <span class="keyword">namespace</span> std;  <span class="comment">// Sử dụng không gian tên std</span>
 
+<span class="comment">// Hàm main - Điểm bắt đầu của mọi chương trình</span>
 <span class="type">int</span> <span class="function">main</span>() {
+    <span class="comment">// In ra màn hình</span>
     cout &lt;&lt; <span class="string">"Hello, World!"</span> &lt;&lt; endl;
+    
+    <span class="comment">// Trả về 0 báo cho hệ điều hành biết chương trình kết thúc thành công</span>
     <span class="keyword">return</span> <span class="number">0</span>;
 }</pre>
                 </div>
                 <ul>
-                    <li><span class="highlight">#include</span> - Thêm thư viện</li>
+                    <li><span class="highlight">#include</span> - Thêm thư viện cần thiết</li>
                     <li><span class="highlight">using namespace std</span> - Sử dụng không gian tên std</li>
-                    <li><span class="highlight">int main()</span> - Hàm chính</li>
+                    <li><span class="highlight">int main()</span> - Hàm chính, điểm bắt đầu</li>
                     <li><span class="highlight">cout</span> - In ra màn hình</li>
-                    <li><span class="highlight">return 0</span> - Kết thúc chương trình</li>
+                    <li><span class="highlight">return 0</span> - Kết thúc chương trình thành công</li>
                 </ul>
             </div>
 
@@ -936,12 +1321,12 @@
                 <div class="code-block">
                     <pre>
 <span class="comment">// Khai báo và khởi tạo biến</span>
-<span class="type">int</span> age = <span class="number">25</span>;
-<span class="type">float</span> height = <span class="number">1.75</span>;
-<span class="type">double</span> weight = <span class="number">68.5</span>;
-<span class="type">char</span> grade = <span class="string">'A'</span>;
-<span class="type">bool</span> isStudent = <span class="keyword">true</span>;
-<span class="type">string</span> name = <span class="string">"Nguyen Van A"</span>;
+<span class="type">int</span> age = <span class="number">25</span>;              <span class="comment">// Số nguyên</span>
+<span class="type">float</span> height = <span class="number">1.75</span>;         <span class="comment">// Số thực</span>
+<span class="type">double</span> weight = <span class="number">68.5</span>;        <span class="comment">// Số thực chính xác cao</span>
+<span class="type">char</span> grade = <span class="string">'A'</span>;          <span class="comment">// Ký tự</span>
+<span class="type">bool</span> isStudent = <span class="keyword">true</span>;     <span class="comment">// Đúng/Sai</span>
+<span class="type">string</span> name = <span class="string">"Nguyen Van A"</span>; <span class="comment">// Chuỗi</span>
 
 <span class="comment">// In ra màn hình</span>
 cout &lt;&lt; <span class="string">"Tên: "</span> &lt;&lt; name &lt;&lt; endl;
@@ -957,13 +1342,26 @@ cout &lt;&lt; <span class="string">"Chiều cao: "</span> &lt;&lt; height &lt;&l
 <span class="comment">// Cách 1: Dùng const</span>
 <span class="keyword">const</span> <span class="type">int</span> MAX_STUDENTS = <span class="number">100</span>;
 <span class="keyword">const</span> <span class="type">float</span> PI = <span class="number">3.14159</span>;
+<span class="keyword">const</span> <span class="type">string</span> COMPANY = <span class="string">"Tech Corp"</span>;
 
 <span class="comment">// Cách 2: Dùng constexpr (compile-time)</span>
 <span class="keyword">constexpr</span> <span class="type">int</span> DAYS_IN_WEEK = <span class="number">7</span>;
+<span class="keyword">constexpr</span> <span class="type">int</span> MONTHS_IN_YEAR = <span class="number">12</span>;
 
 <span class="comment">// Cách 3: Dùng #define (tiền xử lý)</span>
-<span class="preprocessor">#define</span> SPEED_OF_LIGHT 299792458</pre>
+<span class="preprocessor">#define</span> SPEED_OF_LIGHT 299792458
+<span class="preprocessor">#define</span> GRAVITY 9.81
+
+<span class="comment">// Sử dụng hằng số</span>
+cout &lt;&lt; <span class="string">"Số sinh viên tối đa: "</span> &lt;&lt; MAX_STUDENTS &lt;&lt; endl;
+cout &lt;&lt; <span class="string">"PI = "</span> &lt;&lt; PI &lt;&lt; endl;
+cout &lt;&lt; <span class="string">"Số ngày trong tuần: "</span> &lt;&lt; DAYS_IN_WEEK &lt;&lt; endl;</pre>
                 </div>
+                <ul>
+                    <li><span class="highlight-blue">const</span> - Hằng số runtime</li>
+                    <li><span class="highlight-blue">constexpr</span> - Hằng số compile-time (C++11)</li>
+                    <li><span class="highlight-blue">#define</span> - Tiền xử lý (không an toàn kiểu)</li>
+                </ul>
             </div>
 
             <div class="card">
@@ -974,6 +1372,7 @@ cout &lt;&lt; <span class="string">"Chiều cao: "</span> &lt;&lt; height &lt;&l
 <span class="type">string</span> name;
 <span class="type">float</span> score;
 
+<span class="comment">// Nhập từ bàn phím với cin</span>
 cout &lt;&lt; <span class="string">"Nhập tên: "</span>;
 cin &gt;&gt; name;
 
@@ -983,11 +1382,17 @@ cin &gt;&gt; age;
 cout &lt;&lt; <span class="string">"Nhập điểm: "</span>;
 cin &gt;&gt; score;
 
+<span class="comment">// In ra màn hình với cout</span>
 cout &lt;&lt; <span class="string">"\n--- Thông tin ---"</span> &lt;&lt; endl;
 cout &lt;&lt; <span class="string">"Tên: "</span> &lt;&lt; name &lt;&lt; endl;
 cout &lt;&lt; <span class="string">"Tuổi: "</span> &lt;&lt; age &lt;&lt; endl;
 cout &lt;&lt; <span class="string">"Điểm: "</span> &lt;&lt; score &lt;&lt; endl;</pre>
                 </div>
+                <ul>
+                    <li><span class="highlight-blue">cin &gt;&gt;</span> - Nhập dữ liệu từ bàn phím</li>
+                    <li><span class="highlight-blue">cout &lt;&lt;</span> - Xuất dữ liệu ra màn hình</li>
+                    <li><span class="highlight-blue">endl</span> - Xuống dòng mới</li>
+                </ul>
             </div>
         </div>
 
@@ -1030,8 +1435,30 @@ cout &lt;&lt; <span class="string">"Điểm: "</span> &lt;&lt; score &lt;&lt; en
                                 <td>++ --</td>
                                 <td>i++; // i = i + 1</td>
                             </tr>
+                            <tr>
+                                <td><span class="highlight-blue">Bitwise</span></td>
+                                <td>&amp; | ^ ~ &lt;&lt; &gt;&gt;</td>
+                                <td>int result = a &amp; b;</td>
+                            </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="code-block">
+                    <pre>
+<span class="comment">// Ví dụ sử dụng toán tử</span>
+<span class="type">int</span> a = <span class="number">10</span>, b = <span class="number">3</span>;
+
+<span class="type">int</span> sum = a + b;        <span class="comment">// 13</span>
+<span class="type">int</span> diff = a - b;       <span class="comment">// 7</span>
+<span class="type">int</span> product = a * b;    <span class="comment">// 30</span>
+<span class="type">int</span> quotient = a / b;   <span class="comment">// 3 (integer division)</span>
+<span class="type">int</span> remainder = a % b;  <span class="comment">// 1</span>
+
+<span class="type">bool</span> isGreater = (a &gt; b); <span class="comment">// true</span>
+<span class="type">bool</span> isEqual = (a == b);  <span class="comment">// false</span>
+
+cout &lt;&lt; <span class="string">"Tổng: "</span> &lt;&lt; sum &lt;&lt; endl;
+cout &lt;&lt; <span class="string">"Hiệu: "</span> &lt;&lt; diff &lt;&lt; endl;</pre>
                 </div>
             </div>
 
@@ -1052,7 +1479,9 @@ cout &lt;&lt; <span class="string">"Điểm: "</span> &lt;&lt; score &lt;&lt; en
     cout &lt;&lt; <span class="string">"Trung bình"</span>;
 } <span class="keyword">else</span> {
     cout &lt;&lt; <span class="string">"Yếu"</span>;
-}</pre>
+}
+
+<span class="comment">// Kết quả: Giỏi</span></pre>
                 </div>
 
                 <h4>2. switch - case</h4>
@@ -1070,10 +1499,20 @@ cout &lt;&lt; <span class="string">"Điểm: "</span> &lt;&lt; score &lt;&lt; en
     <span class="keyword">case</span> <span class="string">'C'</span>:
         cout &lt;&lt; <span class="string">"Khá"</span>;
         <span class="keyword">break</span>;
+    <span class="keyword">case</span> <span class="string">'D'</span>:
+        cout &lt;&lt; <span class="string">"Trung bình"</span>;
+        <span class="keyword">break</span>;
     <span class="keyword">default</span>:
         cout &lt;&lt; <span class="string">"Cần cố gắng"</span>;
-}</pre>
+}
+
+<span class="comment">// Kết quả: Xuất sắc</span></pre>
                 </div>
+                <ul>
+                    <li><span class="highlight">if-else</span> - Kiểm tra điều kiện phức tạp</li>
+                    <li><span class="highlight">switch-case</span> - Kiểm tra nhiều giá trị cụ thể</li>
+                    <li><span class="highlight">break</span> - Thoát khỏi switch</li>
+                </ul>
             </div>
 
             <div class="card">
@@ -1090,6 +1529,12 @@ cout &lt;&lt; <span class="string">"Điểm: "</span> &lt;&lt; score &lt;&lt; en
 <span class="comment">// Vòng lặp for với nhiều biến</span>
 <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">10</span>; i &lt; j; i++, j--) {
     cout &lt;&lt; i &lt;&lt; <span class="string">" - "</span> &lt;&lt; j &lt;&lt; endl;
+}
+
+<span class="comment">// Vòng lặp for với mảng</span>
+<span class="type">int</span> numbers[] = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>};
+<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) {
+    cout &lt;&lt; numbers[i] &lt;&lt; <span class="string">" "</span>;
 }</pre>
                 </div>
 
@@ -1100,7 +1545,17 @@ cout &lt;&lt; <span class="string">"Điểm: "</span> &lt;&lt; score &lt;&lt; en
 <span class="keyword">while</span> (i &lt;= <span class="number">5</span>) {
     cout &lt;&lt; <span class="string">"Lần lặp "</span> &lt;&lt; i &lt;&lt; endl;
     i++;
-}</pre>
+}
+<span class="comment">// Output: Lần lặp 1 đến 5</span>
+
+<span class="comment">// While với điều kiện phức tạp</span>
+<span class="type">int</span> sum = <span class="number">0</span>;
+<span class="type">int</span> num = <span class="number">1</span>;
+<span class="keyword">while</span> (sum &lt; <span class="number">100</span>) {
+    sum += num;
+    num++;
+}
+cout &lt;&lt; <span class="string">"Tổng: "</span> &lt;&lt; sum &lt;&lt; endl;</pre>
                 </div>
 
                 <h4>3. Vòng lặp do-while</h4>
@@ -1111,21 +1566,28 @@ cout &lt;&lt; <span class="string">"Điểm: "</span> &lt;&lt; score &lt;&lt; en
     cout &lt;&lt; <span class="string">"Nhập số từ 1-10: "</span>;
     cin &gt;&gt; number;
 } <span class="keyword">while</span> (number &lt; <span class="number">1</span> || number &gt; <span class="number">10</span>);
-<span class="comment">// Vòng lặp chạy ít nhất 1 lần</span></pre>
+<span class="comment">// Vòng lặp chạy ít nhất 1 lần</span>
+
+cout &lt;&lt; <span class="string">"Bạn đã nhập: "</span> &lt;&lt; number &lt;&lt; endl;</pre>
                 </div>
+                <ul>
+                    <li><span class="highlight-blue">for</span> - Lặp với số lần biết trước</li>
+                    <li><span class="highlight-blue">while</span> - Lặp với điều kiện kiểm tra trước</li>
+                    <li><span class="highlight-blue">do-while</span> - Lặp với điều kiện kiểm tra sau (ít nhất 1 lần)</li>
+                </ul>
             </div>
 
             <div class="card">
                 <h3>💻 Mảng (Array)</h3>
                 <div class="code-block">
                     <pre>
-<span class="comment">// Khai báo mảng</span>
+<span class="comment">// Khai báo mảng 1 chiều</span>
 <span class="type">int</span> numbers[<span class="number">5</span>] = {<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>};
 <span class="type">string</span> names[<span class="number">3</span>] = {<span class="string">"An"</span>, <span class="string">"Bình"</span>, <span class="string">"Châu"</span>};
 
 <span class="comment">// Truy cập phần tử</span>
-cout &lt;&lt; <span class="string">"Phần tử đầu tiên: "</span> &lt;&lt; numbers[<span class="number">0</span>] &lt;&lt; endl;
-cout &lt;&lt; <span class="string">"Phần tử thứ ba: "</span> &lt;&lt; numbers[<span class="number">2</span>] &lt;&lt; endl;
+cout &lt;&lt; <span class="string">"Phần tử đầu tiên: "</span> &lt;&lt; numbers[<span class="number">0</span>] &lt;&lt; endl;  <span class="comment">// 10</span>
+cout &lt;&lt; <span class="string">"Phần tử thứ ba: "</span> &lt;&lt; numbers[<span class="number">2</span>] &lt;&lt; endl;   <span class="comment">// 30</span>
 
 <span class="comment">// Duyệt mảng với vòng lặp</span>
 <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) {
@@ -1138,18 +1600,31 @@ cout &lt;&lt; <span class="string">"Phần tử thứ ba: "</span> &lt;&lt; numb
     {<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>}
 };
 
-cout &lt;&lt; <span class="string">"matrix[1][2] = "</span> &lt;&lt; matrix[<span class="number">1</span>][<span class="number">2</span>] &lt;&lt; endl;</pre>
+cout &lt;&lt; <span class="string">"matrix[1][2] = "</span> &lt;&lt; matrix[<span class="number">1</span>][<span class="number">2</span>] &lt;&lt; endl;  <span class="comment">// 6</span>
+
+<span class="comment">// Duyệt mảng 2 chiều</span>
+<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) {
+    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) {
+        cout &lt;&lt; matrix[i][j] &lt;&lt; <span class="string">" "</span>;
+    }
+    cout &lt;&lt; endl;
+}</pre>
                 </div>
+                <ul>
+                    <li><span class="highlight-blue">Mảng</span> - Tập hợp các biến cùng kiểu</li>
+                    <li><span class="highlight-blue">Chỉ số</span> - Bắt đầu từ 0</li>
+                    <li><span class="highlight-blue">Mảng 2D</span> - Mảng của mảng (ma trận)</li>
+                </ul>
             </div>
         </div>
 
         <!-- ==================== SECTION 4: TÍNH NĂNG ==================== -->
         <div id="features" class="section">
             <div class="card">
-                <h3>✨ Hàm (Function)</h3>
+                <h3>✨ Hàm (Function) trong C++</h3>
                 <div class="code-block">
                     <pre>
-<span class="comment">// Khai báo hàm</span>
+<span class="comment">// Hàm có tham số và trả về</span>
 <span class="type">int</span> <span class="function">add</span>(<span class="type">int</span> a, <span class="type">int</span> b) {
     <span class="keyword">return</span> a + b;
 }
@@ -1167,12 +1642,25 @@ cout &lt;&lt; <span class="string">"matrix[1][2] = "</span> &lt;&lt; matrix[<spa
     cout &lt;&lt; <span class="string">"Xin chào, "</span> &lt;&lt; name &lt;&lt; <span class="string">"!"</span> &lt;&lt; endl;
 }
 
+<span class="comment">// Hàm có tham số mặc định</span>
+<span class="type">void</span> <span class="function">displayMessage</span>(<span class="type">string</span> msg = <span class="string">"Hello"</span>) {
+    cout &lt;&lt; msg &lt;&lt; endl;
+}
+
 <span class="comment">// Sử dụng hàm</span>
 <span class="type">int</span> sum = add(<span class="number">5</span>, <span class="number">3</span>);
 cout &lt;&lt; <span class="string">"5 + 3 = "</span> &lt;&lt; sum &lt;&lt; endl;
 
-greet(<span class="string">"An"</span>);</pre>
+greet(<span class="string">"An"</span>);
+displayMessage();        <span class="comment">// Hello</span>
+displayMessage(<span class="string">"Goodbye"</span>); <span class="comment">// Goodbye</span></pre>
                 </div>
+                <ul>
+                    <li><span class="highlight-blue">Function</span> - Đoạn code tái sử dụng</li>
+                    <li><span class="highlight-blue">Tham số</span> - Dữ liệu đầu vào</li>
+                    <li><span class="highlight-blue">return</span> - Giá trị trả về</li>
+                    <li><span class="highlight-blue">void</span> - Không trả về</li>
+                </ul>
             </div>
 
             <div class="card">
@@ -1181,33 +1669,69 @@ greet(<span class="string">"An"</span>);</pre>
                     <pre>
 <span class="keyword">class</span> <span class="type">Student</span> {
 <span class="keyword">private</span>:
+    <span class="comment">// Thuộc tính private - chỉ truy cập trong class</span>
     <span class="type">string</span> name;
     <span class="type">int</span> age;
     <span class="type">float</span> gpa;
 
 <span class="keyword">public</span>:
+    <span class="comment">// Constructor - Khởi tạo đối tượng</span>
     Student(<span class="type">string</span> n, <span class="type">int</span> a, <span class="type">float</span> g) {
         name = n;
         age = a;
         gpa = g;
     }
 
+    <span class="comment">// Getter - Lấy giá trị</span>
+    <span class="type">string</span> <span class="function">getName</span>() { <span class="keyword">return</span> name; }
+    <span class="type">int</span> <span class="function">getAge</span>() { <span class="keyword">return</span> age; }
+    <span class="type">float</span> <span class="function">getGPA</span>() { <span class="keyword">return</span> gpa; }
+
+    <span class="comment">// Setter - Gán giá trị</span>
+    <span class="type">void</span> <span class="function">setName</span>(<span class="type">string</span> n) { name = n; }
+    <span class="type">void</span> <span class="function">setAge</span>(<span class="type">int</span> a) { age = a; }
+
+    <span class="comment">// Method - Hành động</span>
     <span class="type">void</span> <span class="function">display</span>() {
+        cout &lt;&lt; <span class="string">"--- Thông tin sinh viên ---"</span> &lt;&lt; endl;
         cout &lt;&lt; <span class="string">"Tên: "</span> &lt;&lt; name &lt;&lt; endl;
         cout &lt;&lt; <span class="string">"Tuổi: "</span> &lt;&lt; age &lt;&lt; endl;
         cout &lt;&lt; <span class="string">"GPA: "</span> &lt;&lt; gpa &lt;&lt; endl;
+        cout &lt;&lt; <span class="string">"Xếp loại: "</span>;
+
+        <span class="keyword">if</span> (gpa &gt;= <span class="number">3.6</span>) cout &lt;&lt; <span class="string">"Xuất sắc"</span>;
+        <span class="keyword">else</span> <span class="keyword">if</span> (gpa &gt;= <span class="number">3.2</span>) cout &lt;&lt; <span class="string">"Giỏi"</span>;
+        <span class="keyword">else</span> <span class="keyword">if</span> (gpa &gt;= <span class="number">2.5</span>) cout &lt;&lt; <span class="string">"Khá"</span>;
+        <span class="keyword">else</span> cout &lt;&lt; <span class="string">"Trung bình"</span>;
+        cout &lt;&lt; endl;
+    }
+
+    <span class="comment">// Destructor - Dọn dẹp (tự động gọi khi đối tượng bị hủy)</span>
+    ~Student() {
+        cout &lt;&lt; <span class="string">"Đã hủy sinh viên: "</span> &lt;&lt; name &lt;&lt; endl;
     }
 };
 
+<span class="comment">// Sử dụng class</span>
 Student s1(<span class="string">"Nguyễn Văn A"</span>, <span class="number">20</span>, <span class="number">3.8</span>);
-s1.display();</pre>
+Student s2(<span class="string">"Trần Thị B"</span>, <span class="number">21</span>, <span class="number">2.9</span>);
+
+s1.display();
+s2.display();</pre>
                 </div>
+                <ul>
+                    <li><span class="highlight-blue">Class</span> - Khuôn mẫu cho đối tượng</li>
+                    <li><span class="highlight-blue">Object</span> - Thể hiện cụ thể của class</li>
+                    <li><span class="highlight-blue">Constructor</span> - Khởi tạo đối tượng</li>
+                    <li><span class="highlight-blue">Getter/Setter</span> - Truy cập dữ liệu private</li>
+                </ul>
             </div>
 
             <div class="card">
                 <h3>✨ Kế thừa (Inheritance)</h3>
                 <div class="code-block">
                     <pre>
+<span class="comment">// Class cha (Base class)</span>
 <span class="keyword">class</span> <span class="type">Animal</span> {
 <span class="keyword">protected</span>:
     <span class="type">string</span> name;
@@ -1215,40 +1739,135 @@ s1.display();</pre>
 
 <span class="keyword">public</span>:
     Animal(<span class="type">string</span> n, <span class="type">int</span> a) : name(n), age(a) {}
+
     <span class="type">void</span> <span class="function">eat</span>() {
         cout &lt;&lt; name &lt;&lt; <span class="string">" đang ăn..."</span> &lt;&lt; endl;
     }
-};
 
-<span class="keyword">class</span> <span class="type">Dog</span> : <span class="keyword">public</span> Animal {
-<span class="keyword">public</span>:
-    Dog(<span class="type">string</span> n, <span class="type">int</span> a) : Animal(n, a) {}
-    <span class="type">void</span> <span class="function">bark</span>() {
-        cout &lt;&lt; name &lt;&lt; <span class="string">" sủa: Gâu gâu!"</span> &lt;&lt; endl;
+    <span class="type">void</span> <span class="function">sleep</span>() {
+        cout &lt;&lt; name &lt;&lt; <span class="string">" đang ngủ..."</span> &lt;&lt; endl;
+    }
+
+    <span class="type">void</span> <span class="function">display</span>() {
+        cout &lt;&lt; <span class="string">"Tên: "</span> &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; <span class="string">"Tuổi: "</span> &lt;&lt; age &lt;&lt; endl;
     }
 };
 
-Dog myDog(<span class="string">"Milo"</span>, <span class="number">3</span>);
-myDog.eat();
-myDog.bark();</pre>
+<span class="comment">// Class con (Derived class) - Kế thừa từ Animal</span>
+<span class="keyword">class</span> <span class="type">Dog</span> : <span class="keyword">public</span> Animal {
+<span class="keyword">private</span>:
+    <span class="type">string</span> breed;  <span class="comment">// Giống chó</span>
+
+<span class="keyword">public</span>:
+    Dog(<span class="type">string</span> n, <span class="type">int</span> a, <span class="type">string</span> b) : Animal(n, a), breed(b) {}
+
+    <span class="comment">// Phương thức riêng</span>
+    <span class="type">void</span> <span class="function">bark</span>() {
+        cout &lt;&lt; name &lt;&lt; <span class="string">" sủa: Gâu gâu!"</span> &lt;&lt; endl;
+    }
+
+    <span class="comment">// Ghi đè (override) phương thức</span>
+    <span class="type">void</span> <span class="function">eat</span>() {
+        cout &lt;&lt; name &lt;&lt; <span class="string">" đang ăn xương..."</span> &lt;&lt; endl;
+    }
+
+    <span class="type">void</span> <span class="function">display</span>() {
+        Animal::display();  <span class="comment">// Gọi display của class cha</span>
+        cout &lt;&lt; <span class="string">"Giống: "</span> &lt;&lt; breed &lt;&lt; endl;
+    }
+};
+
+<span class="comment">// Class con khác</span>
+<span class="keyword">class</span> <span class="type">Cat</span> : <span class="keyword">public</span> Animal {
+<span class="keyword">public</span>:
+    Cat(<span class="type">string</span> n, <span class="type">int</span> a) : Animal(n, a) {}
+
+    <span class="type">void</span> <span class="function">meow</span>() {
+        cout &lt;&lt; name &lt;&lt; <span class="string">" kêu: Meo meo!"</span> &lt;&lt; endl;
+    }
+};
+
+<span class="comment">// Sử dụng</span>
+Dog myDog(<span class="string">"Milo"</span>, <span class="number">3</span>, <span class="string">"Golden Retriever"</span>);
+Cat myCat(<span class="string">"Kitty"</span>, <span class="number">2</span>);
+
+myDog.display();
+myDog.eat();   <span class="comment">// Gọi hàm đã ghi đè</span>
+myDog.bark();
+myDog.sleep(); <span class="comment">// Gọi hàm từ class cha</span>
+
+cout &lt;&lt; endl;
+myCat.display();
+myCat.meow();</pre>
                 </div>
+                <ul>
+                    <li><span class="highlight-blue">Kế thừa</span> - Class con kế thừa từ class cha</li>
+                    <li><span class="highlight-blue">Ghi đè</span> - Viết lại phương thức của class cha</li>
+                    <li><span class="highlight-blue">Đa hình</span> - Cùng hành động nhưng khác cách thực hiện</li>
+                </ul>
             </div>
 
             <div class="card">
                 <h3>✨ STL - Standard Template Library</h3>
+                <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div class="feature-card">
+                        <h4>📦 Vector</h4>
+                        <p>Mảng động, thêm/xóa linh hoạt</p>
+                    </div>
+                    <div class="feature-card card-pink">
+                        <h4>🔗 List</h4>
+                        <p>Danh sách liên kết đôi</p>
+                    </div>
+                    <div class="feature-card card-green">
+                        <h4>🗺️ Map</h4>
+                        <p>Lưu key-value, tìm kiếm nhanh</p>
+                    </div>
+                    <div class="feature-card card-purple">
+                        <h4>📚 Algorithm</h4>
+                        <p>Sắp xếp, tìm kiếm, đảo ngược...</p>
+                    </div>
+                </div>
                 <div class="code-block">
                     <pre>
 <span class="preprocessor">#include</span> &lt;vector&gt;
 <span class="preprocessor">#include</span> &lt;algorithm&gt;
+<span class="preprocessor">#include</span> &lt;map&gt;
+<span class="preprocessor">#include</span> &lt;list&gt;
 
+<span class="comment">// ========== VECTOR ==========</span>
 <span class="type">vector</span>&lt;<span class="type">int</span>&gt; numbers = {<span class="number">5</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">9</span>};
-numbers.push_back(<span class="number">7</span>);
+numbers.push_back(<span class="number">7</span>);  <span class="comment">// Thêm phần tử vào cuối</span>
+numbers.pop_back();      <span class="comment">// Xóa phần tử cuối</span>
+
+<span class="comment">// Sắp xếp vector</span>
 sort(numbers.begin(), numbers.end());
 
+<span class="comment">// Duyệt vector</span>
+cout &lt;&lt; <span class="string">"Vector: "</span>;
 <span class="keyword">for</span> (<span class="type">int</span> x : numbers) {
     cout &lt;&lt; x &lt;&lt; <span class="string">" "</span>;
 }
-<span class="comment">// Output: 1 2 5 7 8 9</span></pre>
+<span class="comment">// Output: 1 2 5 7 8 9</span>
+
+<span class="comment">// ========== MAP ==========</span>
+<span class="type">map</span>&lt;<span class="type">string</span>, <span class="type">int</span>&gt; students;
+students[<span class="string">"An"</span>] = <span class="number">85</span>;
+students[<span class="string">"Bình"</span>] = <span class="number">92</span>;
+students[<span class="string">"Châu"</span>] = <span class="number">78</span>;
+
+cout &lt;&lt; <span class="string">"Điểm của Bình: "</span> &lt;&lt; students[<span class="string">"Bình"</span>] &lt;&lt; endl;
+
+<span class="comment">// ========== LIST ==========</span>
+<span class="type">list</span>&lt;<span class="type">int</span>&gt; myList = {<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>};
+myList.push_front(<span class="number">5</span>);   <span class="comment">// Thêm vào đầu</span>
+myList.push_back(<span class="number">40</span>);    <span class="comment">// Thêm vào cuối</span>
+
+cout &lt;&lt; <span class="string">"List: "</span>;
+<span class="keyword">for</span> (<span class="type">int</span> x : myList) {
+    cout &lt;&lt; x &lt;&lt; <span class="string">" "</span>;
+}
+<span class="comment">// Output: 5 10 20 30 40</span></pre>
                 </div>
             </div>
         </div>
@@ -1256,19 +1875,31 @@ sort(numbers.begin(), numbers.end());
         <!-- ==================== SECTION 5: VÍ DỤ ==================== -->
         <div id="examples" class="section">
             <div class="card">
-                <h3>📝 Ví dụ 1: Tính tổng 2 số</h3>
+                <h3>📝 Ví dụ 1: Tính tổng, hiệu, tích, thương</h3>
                 <div class="code-block">
                     <pre>
 <span class="preprocessor">#include</span> &lt;iostream&gt;
 <span class="keyword">using</span> <span class="keyword">namespace</span> std;
 
 <span class="type">int</span> <span class="function">main</span>() {
-    <span class="type">int</span> a, b;
+    <span class="type">double</span> a, b;
+    
     cout &lt;&lt; <span class="string">"Nhập số thứ nhất: "</span>;
     cin &gt;&gt; a;
     cout &lt;&lt; <span class="string">"Nhập số thứ hai: "</span>;
     cin &gt;&gt; b;
-    cout &lt;&lt; <span class="string">"Tổng = "</span> &lt;&lt; a + b &lt;&lt; endl;
+    
+    cout &lt;&lt; <span class="string">"\n--- Kết quả ---"</span> &lt;&lt; endl;
+    cout &lt;&lt; <span class="string">"Tổng: "</span> &lt;&lt; a + b &lt;&lt; endl;
+    cout &lt;&lt; <span class="string">"Hiệu: "</span> &lt;&lt; a - b &lt;&lt; endl;
+    cout &lt;&lt; <span class="string">"Tích: "</span> &lt;&lt; a * b &lt;&lt; endl;
+    
+    <span class="keyword">if</span> (b != <span class="number">0</span>) {
+        cout &lt;&lt; <span class="string">"Thương: "</span> &lt;&lt; a / b &lt;&lt; endl;
+    } <span class="keyword">else</span> {
+        cout &lt;&lt; <span class="string">"Không thể chia cho 0!"</span> &lt;&lt; endl;
+    }
+    
     <span class="keyword">return</span> <span class="number">0</span>;
 }</pre>
                 </div>
@@ -1291,66 +1922,172 @@ sort(numbers.begin(), numbers.end());
 }
 
 <span class="type">int</span> <span class="function">main</span>() {
-    <span class="type">int</span> n = <span class="number">17</span>;
+    <span class="type">int</span> n;
+    cout &lt;&lt; <span class="string">"Nhập số cần kiểm tra: "</span>;
+    cin &gt;&gt; n;
+    
     <span class="keyword">if</span> (isPrime(n)) {
         cout &lt;&lt; n &lt;&lt; <span class="string">" là số nguyên tố"</span> &lt;&lt; endl;
     } <span class="keyword">else</span> {
         cout &lt;&lt; n &lt;&lt; <span class="string">" không là số nguyên tố"</span> &lt;&lt; endl;
     }
+    
+    <span class="comment">// In ra các số nguyên tố từ 1 đến 100</span>
+    cout &lt;&lt; <span class="string">"\nCác số nguyên tố từ 1 đến 100: "</span>;
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= <span class="number">100</span>; i++) {
+        <span class="keyword">if</span> (isPrime(i)) {
+            cout &lt;&lt; i &lt;&lt; <span class="string">" "</span>;
+        }
+    }
+    cout &lt;&lt; endl;
+    
     <span class="keyword">return</span> <span class="number">0</span>;
 }</pre>
                 </div>
             </div>
 
             <div class="card">
-                <h3>📝 Ví dụ 3: Fibonacci</h3>
+                <h3>📝 Ví dụ 3: Fibonacci với đệ quy và vòng lặp</h3>
                 <div class="code-block">
                     <pre>
 <span class="preprocessor">#include</span> &lt;iostream&gt;
 <span class="keyword">using</span> <span class="keyword">namespace</span> std;
 
-<span class="type">int</span> <span class="function">fibonacci</span>(<span class="type">int</span> n) {
+<span class="comment">// Fibonacci với đệ quy</span>
+<span class="type">int</span> <span class="function">fibonacci_recursive</span>(<span class="type">int</span> n) {
     <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) <span class="keyword">return</span> n;
-    <span class="keyword">return</span> fibonacci(n - <span class="number">1</span>) + fibonacci(n - <span class="number">2</span>);
+    <span class="keyword">return</span> fibonacci_recursive(n - <span class="number">1</span>) + fibonacci_recursive(n - <span class="number">2</span>);
+}
+
+<span class="comment">// Fibonacci với vòng lặp (tối ưu hơn)</span>
+<span class="type">int</span> <span class="function">fibonacci_loop</span>(<span class="type">int</span> n) {
+    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) <span class="keyword">return</span> n;
+    
+    <span class="type">int</span> a = <span class="number">0</span>, b = <span class="number">1</span>, c;
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    <span class="keyword">return</span> b;
 }
 
 <span class="type">int</span> <span class="function">main</span>() {
-    <span class="type">int</span> n = <span class="number">10</span>;
-    cout &lt;&lt; <span class="string">"Fibonacci(10) = "</span> &lt;&lt; fibonacci(n) &lt;&lt; endl;
+    <span class="type">int</span> n;
+    cout &lt;&lt; <span class="string">"Nhập số n: "</span>;
+    cin &gt;&gt; n;
+    
+    cout &lt;&lt; <span class="string">"Fibonacci đệ quy ("</span> &lt;&lt; n &lt;&lt; <span class="string">") = "</span> 
+         &lt;&lt; fibonacci_recursive(n) &lt;&lt; endl;
+    cout &lt;&lt; <span class="string">"Fibonacci vòng lặp ("</span> &lt;&lt; n &lt;&lt; <span class="string">") = "</span> 
+         &lt;&lt; fibonacci_loop(n) &lt;&lt; endl;
+    
+    cout &lt;&lt; <span class="string">"\nDãy Fibonacci từ 0 đến "</span> &lt;&lt; n &lt;&lt; <span class="string">": "</span>;
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n; i++) {
+        cout &lt;&lt; fibonacci_loop(i) &lt;&lt; <span class="string">" "</span>;
+    }
+    cout &lt;&lt; endl;
+    
     <span class="keyword">return</span> <span class="number">0</span>;
 }</pre>
                 </div>
             </div>
 
             <div class="card">
-                <h3>📝 Ví dụ 4: Quản lý sinh viên</h3>
+                <h3>📝 Ví dụ 4: Quản lý sinh viên (Class + Vector)</h3>
                 <div class="code-block">
                     <pre>
 <span class="preprocessor">#include</span> &lt;iostream&gt;
 <span class="preprocessor">#include</span> &lt;vector&gt;
+<span class="preprocessor">#include</span> &lt;iomanip&gt;
 <span class="keyword">using</span> <span class="keyword">namespace</span> std;
 
 <span class="keyword">class</span> <span class="type">Student</span> {
-<span class="keyword">public</span>:
+<span class="keyword">private</span>:
+    <span class="type">string</span> id;
     <span class="type">string</span> name;
-    <span class="type">double</span> score;
+    <span class="type">double</span> math, literature, english;
+
+<span class="keyword">public</span>:
+    Student() : id(<span class="string">""</span>), name(<span class="string">""</span>), math(<span class="number">0</span>), literature(<span class="number">0</span>), english(<span class="number">0</span>) {}
     
-    Student(<span class="type">string</span> n, <span class="type">double</span> s) : name(n), score(s) {}
-    
+    Student(<span class="type">string</span> i, <span class="type">string</span> n, <span class="type">double</span> m, <span class="type">double</span> l, <span class="type">double</span> e) {
+        id = i; name = n; math = m; literature = l; english = e;
+    }
+
+    <span class="type">void</span> <span class="function">input</span>() {
+        cout &lt;&lt; <span class="string">"Nhập mã số: "</span>; cin &gt;&gt; id;
+        cin.ignore();
+        cout &lt;&lt; <span class="string">"Nhập tên: "</span>; getline(cin, name);
+        cout &lt;&lt; <span class="string">"Nhập điểm Toán: "</span>; cin &gt;&gt; math;
+        cout &lt;&lt; <span class="string">"Nhập điểm Văn: "</span>; cin &gt;&gt; literature;
+        cout &lt;&lt; <span class="string">"Nhập điểm Anh: "</span>; cin &gt;&gt; english;
+    }
+
+    <span class="type">double</span> <span class="function">getAverage</span>() {
+        <span class="keyword">return</span> (math + literature + english) / <span class="number">3</span>;
+    }
+
+    <span class="type">string</span> <span class="function">getRank</span>() {
+        <span class="type">double</span> avg = getAverage();
+        <span class="keyword">if</span> (avg &gt;= <span class="number">9.0</span>) <span class="keyword">return</span> <span class="string">"Xuất sắc"</span>;
+        <span class="keyword">if</span> (avg &gt;= <span class="number">8.0</span>) <span class="keyword">return</span> <span class="string">"Giỏi"</span>;
+        <span class="keyword">if</span> (avg &gt;= <span class="number">7.0</span>) <span class="keyword">return</span> <span class="string">"Khá"</span>;
+        <span class="keyword">if</span> (avg &gt;= <span class="number">5.0</span>) <span class="keyword">return</span> <span class="string">"Trung bình"</span>;
+        <span class="keyword">return</span> <span class="string">"Yếu"</span>;
+    }
+
     <span class="type">void</span> <span class="function">display</span>() {
-        cout &lt;&lt; <span class="string">"Tên: "</span> &lt;&lt; name &lt;&lt; <span class="string">" | Điểm: "</span> &lt;&lt; score &lt;&lt; endl;
+        cout &lt;&lt; left &lt;&lt; setw(<span class="number">10</span>) &lt;&lt; id
+             &lt;&lt; setw(<span class="number">20</span>) &lt;&lt; name
+             &lt;&lt; setw(<span class="number">8</span>) &lt;&lt; math
+             &lt;&lt; setw(<span class="number">8</span>) &lt;&lt; literature
+             &lt;&lt; setw(<span class="number">8</span>) &lt;&lt; english
+             &lt;&lt; setw(<span class="number">10</span>) &lt;&lt; fixed &lt;&lt; setprecision(<span class="number">2</span>) &lt;&lt; getAverage()
+             &lt;&lt; setw(<span class="number">12</span>) &lt;&lt; getRank() &lt;&lt; endl;
     }
 };
 
 <span class="type">int</span> <span class="function">main</span>() {
     <span class="type">vector</span>&lt;Student&gt; students;
-    students.push_back(Student(<span class="string">"An"</span>, <span class="number">8.5</span>));
-    students.push_back(Student(<span class="string">"Bình"</span>, <span class="number">7.0</span>));
-    students.push_back(Student(<span class="string">"Châu"</span>, <span class="number">9.2</span>));
+    <span class="type">int</span> choice;
     
-    <span class="keyword">for</span> (Student &amp;s : students) {
-        s.display();
-    }
+    <span class="keyword">do</span> {
+        cout &lt;&lt; <span class="string">"\n=== QUẢN LÝ SINH VIÊN ==="</span> &lt;&lt; endl;
+        cout &lt;&lt; <span class="string">"1. Thêm sinh viên"</span> &lt;&lt; endl;
+        cout &lt;&lt; <span class="string">"2. Hiển thị danh sách"</span> &lt;&lt; endl;
+        cout &lt;&lt; <span class="string">"3. Thoát"</span> &lt;&lt; endl;
+        cout &lt;&lt; <span class="string">"Nhập lựa chọn: "</span>;
+        cin &gt;&gt; choice;
+        
+        <span class="keyword">if</span> (choice == <span class="number">1</span>) {
+            Student s;
+            s.input();
+            students.push_back(s);
+            cout &lt;&lt; <span class="string">"Đã thêm sinh viên thành công!"</span> &lt;&lt; endl;
+        }
+        <span class="keyword">else</span> <span class="keyword">if</span> (choice == <span class="number">2</span>) {
+            <span class="keyword">if</span> (students.empty()) {
+                cout &lt;&lt; <span class="string">"Danh sách trống!"</span> &lt;&lt; endl;
+            } <span class="keyword">else</span> {
+                cout &lt;&lt; <span class="string">"\n--- DANH SÁCH SINH VIÊN ---"</span> &lt;&lt; endl;
+                cout &lt;&lt; left &lt;&lt; setw(<span class="number">10</span>) &lt;&lt; <span class="string">"Mã số"</span>
+                     &lt;&lt; setw(<span class="number">20</span>) &lt;&lt; <span class="string">"Tên"</span>
+                     &lt;&lt; setw(<span class="number">8</span>) &lt;&lt; <span class="string">"Toán"</span>
+                     &lt;&lt; setw(<span class="number">8</span>) &lt;&lt; <span class="string">"Văn"</span>
+                     &lt;&lt; setw(<span class="number">8</span>) &lt;&lt; <span class="string">"Anh"</span>
+                     &lt;&lt; setw(<span class="number">10</span>) &lt;&lt; <span class="string">"TB"</span>
+                     &lt;&lt; setw(<span class="number">12</span>) &lt;&lt; <span class="string">"Xếp loại"</span> &lt;&lt; endl;
+                cout &lt;&lt; <span class="string">"------------------------------------------------------------"</span> &lt;&lt; endl;
+                
+                <span class="keyword">for</span> (Student &amp;s : students) {
+                    s.display();
+                }
+            }
+        }
+    } <span class="keyword">while</span> (choice != <span class="number">3</span>);
+    
+    cout &lt;&lt; <span class="string">"Đã thoát chương trình!"</span> &lt;&lt; endl;
     <span class="keyword">return</span> <span class="number">0</span>;
 }</pre>
                 </div>
@@ -1363,61 +2100,172 @@ sort(numbers.begin(), numbers.end());
                 <h3>🚀 Con trỏ (Pointer)</h3>
                 <div class="code-block">
                     <pre>
+<span class="comment">// Khai báo con trỏ</span>
 <span class="type">int</span> number = <span class="number">42</span>;
-<span class="type">int</span>* ptr = &amp;number;
+<span class="type">int</span>* ptr = &amp;number;  <span class="comment">// ptr lưu địa chỉ của number</span>
 
-cout &lt;&lt; <span class="string">"Giá trị: "</span> &lt;&lt; number &lt;&lt; endl;
-cout &lt;&lt; <span class="string">"Địa chỉ: "</span> &lt;&lt; &amp;number &lt;&lt; endl;
-cout &lt;&lt; <span class="string">"Giá trị qua con trỏ: "</span> &lt;&lt; *ptr &lt;&lt; endl;
+cout &lt;&lt; <span class="string">"Giá trị: "</span> &lt;&lt; number &lt;&lt; endl;        <span class="comment">// 42</span>
+cout &lt;&lt; <span class="string">"Địa chỉ: "</span> &lt;&lt; &amp;number &lt;&lt; endl;      <span class="comment">// 0x7ff... </span>
+cout &lt;&lt; <span class="string">"Giá trị qua con trỏ: "</span> &lt;&lt; *ptr &lt;&lt; endl;  <span class="comment">// 42</span>
+
+<span class="comment">// Thay đổi giá trị qua con trỏ</span>
+*ptr = <span class="number">100</span>;
+cout &lt;&lt; <span class="string">"Giá trị mới: "</span> &lt;&lt; number &lt;&lt; endl;  <span class="comment">// 100</span>
+
+<span class="comment">// Con trỏ NULL</span>
+<span class="type">int</span>* nullPtr = <span class="keyword">nullptr</span>;
+<span class="keyword">if</span> (nullPtr == <span class="keyword">nullptr</span>) {
+    cout &lt;&lt; <span class="string">"Con trỏ rỗng"</span> &lt;&lt; endl;
+}
 
 <span class="comment">// Cấp phát động</span>
 <span class="type">int</span>* dynamicArray = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">5</span>];
+<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) {
+    dynamicArray[i] = i * <span class="number">10</span>;
+}
+
+<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) {
+    cout &lt;&lt; dynamicArray[i] &lt;&lt; <span class="string">" "</span>;
+}
+<span class="comment">// Output: 0 10 20 30 40</span>
+
+<span class="comment">// Giải phóng bộ nhớ</span>
 <span class="keyword">delete</span>[] dynamicArray;</pre>
                 </div>
+                <ul>
+                    <li><span class="highlight-blue">Con trỏ</span> - Lưu địa chỉ bộ nhớ</li>
+                    <li><span class="highlight-blue">*ptr</span> - Lấy giá trị tại địa chỉ</li>
+                    <li><span class="highlight-blue">&amp;var</span> - Lấy địa chỉ của biến</li>
+                    <li><span class="highlight-blue">new/delete</span> - Cấp phát/giải phóng động</li>
+                </ul>
             </div>
 
             <div class="card">
-                <h3>🚀 Template</h3>
+                <h3>🚀 Template - Lập trình tổng quát</h3>
                 <div class="code-block">
                     <pre>
+<span class="comment">// Template function</span>
 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
 T <span class="function">max</span>(T a, T b) {
     <span class="keyword">return</span> (a &gt; b) ? a : b;
 }
 
+<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
+<span class="type">void</span> <span class="function">swap</span>(T &amp;a, T &amp;b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+<span class="comment">// Template class</span>
+<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
+<span class="keyword">class</span> <span class="type">Box</span> {
+<span class="keyword">private</span>:
+    T value;
+
+<span class="keyword">public</span>:
+    Box(T v) : value(v) {}
+    T <span class="function">getValue</span>() { <span class="keyword">return</span> value; }
+    <span class="type">void</span> <span class="function">setValue</span>(T v) { value = v; }
+    <span class="type">void</span> <span class="function">display</span>() {
+        cout &lt;&lt; <span class="string">"Giá trị: "</span> &lt;&lt; value &lt;&lt; endl;
+    }
+};
+
+<span class="comment">// Sử dụng</span>
 cout &lt;&lt; <span class="string">"max(10, 20) = "</span> &lt;&lt; max(<span class="number">10</span>, <span class="number">20</span>) &lt;&lt; endl;
-cout &lt;&lt; <span class="string">"max(3.14, 2.71) = "</span> &lt;&lt; max(<span class="number">3.14</span>, <span class="number">2.71</span>) &lt;&lt; endl;</pre>
+cout &lt;&lt; <span class="string">"max(3.14, 2.71) = "</span> &lt;&lt; max(<span class="number">3.14</span>, <span class="number">2.71</span>) &lt;&lt; endl;
+
+<span class="type">int</span> a = <span class="number">5</span>, b = <span class="number">10</span>;
+swap(a, b);
+cout &lt;&lt; <span class="string">"a = "</span> &lt;&lt; a &lt;&lt; <span class="string">", b = "</span> &lt;&lt; b &lt;&lt; endl;  <span class="comment">// a = 10, b = 5</span>
+
+Box&lt;<span class="type">int</span>&gt; intBox(<span class="number">100</span>);
+Box&lt;<span class="type">string</span>&gt; strBox(<span class="string">"Hello"</span>);
+
+intBox.display();
+strBox.display();</pre>
                 </div>
             </div>
 
             <div class="card">
-                <h3>🚀 Lambda Expression</h3>
+                <h3>🚀 Lambda Expression (C++11)</h3>
                 <div class="code-block">
                     <pre>
+<span class="preprocessor">#include</span> &lt;vector&gt;
+<span class="preprocessor">#include</span> &lt;algorithm&gt;
+
+<span class="type">vector</span>&lt;<span class="type">int</span>&gt; numbers = {<span class="number">5</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">3</span>};
+
+<span class="comment">// Lambda cơ bản</span>
+<span class="keyword">auto</span> print = []() {
+    cout &lt;&lt; <span class="string">"Hello Lambda!"</span> &lt;&lt; endl;
+};
+print();
+
+<span class="comment">// Lambda có tham số</span>
 <span class="keyword">auto</span> add = [](<span class="type">int</span> a, <span class="type">int</span> b) {
     <span class="keyword">return</span> a + b;
 };
 cout &lt;&lt; <span class="string">"Tổng: "</span> &lt;&lt; add(<span class="number">5</span>, <span class="number">3</span>) &lt;&lt; endl;
 
-<span class="type">vector</span>&lt;<span class="type">int</span>&gt; numbers = {<span class="number">5</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">9</span>};
+<span class="comment">// Sắp xếp với lambda</span>
 sort(numbers.begin(), numbers.end(), [](<span class="type">int</span> a, <span class="type">int</span> b) {
-    <span class="keyword">return</span> a &gt; b;
-});</pre>
+    <span class="keyword">return</span> a &gt; b;  <span class="comment">// Sắp xếp giảm dần</span>
+});
+
+cout &lt;&lt; <span class="string">"Sắp xếp giảm dần: "</span>;
+<span class="keyword">for</span> (<span class="type">int</span> x : numbers) {
+    cout &lt;&lt; x &lt;&lt; <span class="string">" "</span>;
+}
+<span class="comment">// Output: 9 8 5 3 2 1</span>
+
+<span class="comment">// Lambda với capture</span>
+<span class="type">int</span> factor = <span class="number">2</span>;
+<span class="keyword">auto</span> multiply = [factor](<span class="type">int</span> x) {
+    <span class="keyword">return</span> x * factor;
+};
+cout &lt;&lt; <span class="string">"5 * 2 = "</span> &lt;&lt; multiply(<span class="number">5</span>) &lt;&lt; endl;</pre>
                 </div>
             </div>
 
             <div class="card">
-                <h3>🚀 Exception Handling</h3>
+                <h3>🚀 Exception Handling - Xử lý ngoại lệ</h3>
                 <div class="code-block">
                     <pre>
-<span class="keyword">try</span> {
-    <span class="type">double</span> result = divide(x, y);
-    cout &lt;&lt; <span class="string">"Kết quả: "</span> &lt;&lt; result &lt;&lt; endl;
+<span class="preprocessor">#include</span> &lt;stdexcept&gt;
+
+<span class="type">double</span> <span class="function">divide</span>(<span class="type">double</span> a, <span class="type">double</span> b) {
+    <span class="keyword">if</span> (b == <span class="number">0</span>) {
+        <span class="keyword">throw</span> runtime_error(<span class="string">"Lỗi: Chia cho 0!"</span>);
+    }
+    <span class="keyword">return</span> a / b;
 }
-<span class="keyword">catch</span> (<span class="keyword">const</span> runtime_error &amp;e) {
-    cout &lt;&lt; <span class="string">"Lỗi: "</span> &lt;&lt; e.what() &lt;&lt; endl;
+
+<span class="type">int</span> <span class="function">main</span>() {
+    <span class="type">double</span> x, y;
+    cout &lt;&lt; <span class="string">"Nhập a và b: "</span>;
+    cin &gt;&gt; x &gt;&gt; y;
+    
+    <span class="keyword">try</span> {
+        <span class="type">double</span> result = divide(x, y);
+        cout &lt;&lt; <span class="string">"Kết quả: "</span> &lt;&lt; result &lt;&lt; endl;
+    }
+    <span class="keyword">catch</span> (<span class="keyword">const</span> runtime_error &amp;e) {
+        cout &lt;&lt; <span class="string">"Bắt lỗi: "</span> &lt;&lt; e.what() &lt;&lt; endl;
+    }
+    <span class="keyword">catch</span> (...) {
+        cout &lt;&lt; <span class="string">"Lỗi không xác định!"</span> &lt;&lt; endl;
+    }
+    
+    <span class="keyword">return</span> <span class="number">0</span>;
 }</pre>
                 </div>
+                <ul>
+                    <li><span class="highlight-blue">try</span> - Khối lệnh cần kiểm tra</li>
+                    <li><span class="highlight-blue">catch</span> - Bắt và xử lý ngoại lệ</li>
+                    <li><span class="highlight-blue">throw</span> - Ném ngoại lệ</li>
+                </ul>
             </div>
         </div>
 
@@ -1546,7 +2394,58 @@ int main() {
             </div>
         </div>
 
-        <!-- ==================== SECTION 9: QUIZ ==================== -->
+        <!-- ==================== SECTION 9: AI ASSISTANT ==================== -->
+        <div id="aiassistant" class="section">
+            <div class="card">
+                <h3>🤖 Trợ lý AI - Hỏi đáp về C++</h3>
+                <p style="color: #b0b0c0; margin-bottom: 15px;">
+                    Hỏi tôi bất kỳ câu hỏi nào về C++. Tôi sẽ giải thích một cách dễ hiểu, kèm theo ví dụ cụ thể.
+                </p>
+
+                <div class="ai-chat-wrapper">
+                    <div class="ai-chat-header">
+                        <div class="ai-icon">🤖</div>
+                        <div class="ai-name">Trợ lý C++ AI</div>
+                        <div class="ai-status">🟢 Online</div>
+                    </div>
+
+                    <div class="ai-chat-body" id="chatBody">
+                        <div class="chat-message ai">
+                            <div class="avatar">🤖</div>
+                            <div class="bubble">
+                                Xin chào! Tôi là trợ lý AI chuyên về C++. Bạn có thể hỏi tôi bất kỳ điều gì về:
+                                <br>• <span class="highlight-text">Cú pháp</span> cơ bản
+                                <br>• <span class="highlight-text">Lớp và đối tượng</span> (OOP)
+                                <br>• <span class="highlight-text">Con trỏ</span> và bộ nhớ
+                                <br>• <span class="highlight-text">STL</span> (Vector, Map, v.v.)
+                                <br>• <span class="highlight-text">Lỗi</span> và cách sửa
+                                <br>• <span class="highlight-text">Giải thích code</span>
+                                <br><br>Hãy bắt đầu bằng cách hỏi tôi một câu hỏi!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ai-chat-footer">
+                        <input type="text" id="aiQuestion" placeholder="Nhập câu hỏi của bạn về C++..." onkeypress="if(event.key==='Enter') askAI()">
+                        <button onclick="askAI()">Gửi câu hỏi 💬</button>
+                    </div>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <p style="color: #6a6a7a; font-size: 0.85rem; margin-bottom: 8px;">💡 Gợi ý câu hỏi:</p>
+                    <div class="suggestion-chips">
+                        <span class="chip" onclick="askSuggestion('Con trỏ trong C++ là gì?')">🔗 Con trỏ là gì?</span>
+                        <span class="chip" onclick="askSuggestion('Class và Object khác nhau thế nào?')">🏛️ Class vs Object</span>
+                        <span class="chip" onclick="askSuggestion('Tại sao dùng vector thay vì mảng?')">📦 Vector vs Array</span>
+                        <span class="chip" onclick="askSuggestion('Lỗi thiếu dấu ; sửa thế nào?')">🔧 Sửa lỗi ;</span>
+                        <span class="chip" onclick="askSuggestion('Kế thừa trong C++ là gì?')">🧬 Kế thừa</span>
+                        <span class="chip" onclick="askSuggestion('STL là gì?')">📚 STL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SECTION 10: QUIZ ==================== -->
         <div id="quiz" class="section">
             <div class="card">
                 <h3>🧠 Kiểm tra kiến thức C++</h3>
@@ -1554,80 +2453,48 @@ int main() {
                     Hãy chọn đáp án đúng cho mỗi câu hỏi nhé!
                 </p>
 
-                <div class="quiz-box" style="background:rgba(255,255,255,0.05); border-radius:15px; padding:20px; margin:15px 0;">
-                    <p class="question" style="font-size:1.1rem; margin-bottom:10px;"><strong>Câu 1:</strong> C++ là ngôn ngữ lập trình gì?</p>
-                    <div class="options" style="display:flex; flex-direction:column; gap:8px;">
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q1" value="A"> Ngôn ngữ bậc thấp
-                        </label>
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q1" value="B"> Ngôn ngữ bậc cao, hướng đối tượng
-                        </label>
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q1" value="C"> Ngôn ngữ đánh dấu
-                        </label>
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q1" value="D"> Ngôn ngữ truy vấn
-                        </label>
+                <div class="quiz-box">
+                    <p class="question"><strong>Câu 1:</strong> C++ là ngôn ngữ lập trình gì?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A"> Ngôn ngữ bậc thấp</label>
+                        <label><input type="radio" name="q1" value="B"> Ngôn ngữ bậc cao, hướng đối tượng</label>
+                        <label><input type="radio" name="q1" value="C"> Ngôn ngữ đánh dấu</label>
+                        <label><input type="radio" name="q1" value="D"> Ngôn ngữ truy vấn</label>
                     </div>
                 </div>
 
-                <div class="quiz-box" style="background:rgba(255,255,255,0.05); border-radius:15px; padding:20px; margin:15px 0;">
-                    <p class="question" style="font-size:1.1rem; margin-bottom:10px;"><strong>Câu 2:</strong> Từ khóa nào dùng để khai báo lớp trong C++?</p>
-                    <div class="options" style="display:flex; flex-direction:column; gap:8px;">
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q2" value="A"> struct
-                        </label>
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q2" value="B"> class
-                        </label>
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q2" value="C"> interface
-                        </label>
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q2" value="D"> object
-                        </label>
+                <div class="quiz-box">
+                    <p class="question"><strong>Câu 2:</strong> Từ khóa nào dùng để khai báo lớp trong C++?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A"> struct</label>
+                        <label><input type="radio" name="q2" value="B"> class</label>
+                        <label><input type="radio" name="q2" value="C"> interface</label>
+                        <label><input type="radio" name="q2" value="D"> object</label>
                     </div>
                 </div>
 
-                <div class="quiz-box" style="background:rgba(255,255,255,0.05); border-radius:15px; padding:20px; margin:15px 0;">
-                    <p class="question" style="font-size:1.1rem; margin-bottom:10px;"><strong>Câu 3:</strong> Hàm main() trong C++ trả về kiểu dữ liệu gì?</p>
-                    <div class="options" style="display:flex; flex-direction:column; gap:8px;">
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q3" value="A"> void
-                        </label>
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q3" value="B"> float
-                        </label>
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q3" value="C"> int
-                        </label>
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q3" value="D"> string
-                        </label>
+                <div class="quiz-box">
+                    <p class="question"><strong>Câu 3:</strong> Hàm main() trong C++ trả về kiểu dữ liệu gì?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="A"> void</label>
+                        <label><input type="radio" name="q3" value="B"> float</label>
+                        <label><input type="radio" name="q3" value="C"> int</label>
+                        <label><input type="radio" name="q3" value="D"> string</label>
                     </div>
                 </div>
 
-                <div class="quiz-box" style="background:rgba(255,255,255,0.05); border-radius:15px; padding:20px; margin:15px 0;">
-                    <p class="question" style="font-size:1.1rem; margin-bottom:10px;"><strong>Câu 4:</strong> Vòng lặp nào dùng để lặp với số lần biết trước?</p>
-                    <div class="options" style="display:flex; flex-direction:column; gap:8px;">
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q4" value="A"> while
-                        </label>
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q4" value="B"> do-while
-                        </label>
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q4" value="C"> for
-                        </label>
-                        <label style="display:flex; align-items:center; gap:10px; padding:10px 15px; background:rgba(255,255,255,0.05); border-radius:8px; cursor:pointer; color:#d0d0dc;">
-                            <input type="radio" name="q4" value="D"> loop
-                        </label>
+                <div class="quiz-box">
+                    <p class="question"><strong>Câu 4:</strong> Vòng lặp nào dùng để lặp với số lần biết trước?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A"> while</label>
+                        <label><input type="radio" name="q4" value="B"> do-while</label>
+                        <label><input type="radio" name="q4" value="C"> for</label>
+                        <label><input type="radio" name="q4" value="D"> loop</label>
                     </div>
                 </div>
 
-                <button class="btn-check" onclick="checkQuiz()" style="margin-top:15px; padding:12px 30px; background:linear-gradient(135deg,#4facfe,#00f2fe); border:none; border-radius:30px; color:#fff; font-size:1rem; cursor:pointer; transition:all 0.3s; font-weight:600;">📊 Xem kết quả</button>
-                <div id="quizResult" class="result" style="margin-top:15px; padding:15px; border-radius:10px; display:none; font-weight:600;"></div>
+                <button class="btn-check" onclick="checkQuiz()">📊 Xem kết quả</button>
+                <div id="quizResult" class="quiz-result"></div>
             </div>
         </div>
 
@@ -1652,7 +2519,7 @@ int main() {
         });
 
         function updateProgress(sectionId) {
-            const sections = ['intro', 'basic', 'syntax', 'features', 'examples', 'advanced', 'editor', 'challenges', 'quiz'];
+            const sections = ['intro', 'basic', 'syntax', 'features', 'examples', 'advanced', 'editor', 'challenges', 'aiassistant', 'quiz'];
             const index = sections.indexOf(sectionId);
             const progress = ((index + 1) / sections.length) * 100;
             document.getElementById('progressBar').style.width = progress + '%';
@@ -1685,7 +2552,6 @@ int main() {
             document.getElementById('output').innerHTML = '<span class="info">// Đã reset code mặc định</span>';
         }
 
-        // ============ RUN CODE ============
         function runCode() {
             const code = getCode();
             const output = document.getElementById('output');
@@ -1710,7 +2576,6 @@ int main() {
             output.innerHTML = result;
         }
 
-        // ============ CHECK ERRORS ============
         function checkCodeErrors(code) {
             const errors = [];
 
@@ -1747,28 +2612,14 @@ int main() {
                 errors.push(`Số dấu { và } không khớp (${openBraces} vs ${closeBraces})`);
             }
 
-            if (code.includes('cout') && !code.match(/cout\s*<<\s*.*;/)) {
-                errors.push('Cú pháp cout không đúng. Dùng: cout << "text" << endl;');
-            }
-
-            if (code.includes('cin') && !code.match(/cin\s*>>\s*.*;/)) {
-                errors.push('Cú pháp cin không đúng. Dùng: cin >> variable;');
-            }
-
             return errors;
         }
 
-        // ============ SIMULATE RUN ============
         function simulateRun(code) {
             let output = '<span class="success">✅ Chương trình chạy thành công!</span>\n\n';
 
             if (code.includes('cout << "Hello, World!"')) {
                 output += 'Hello, World!\n';
-            }
-
-            if (code.includes('cin')) {
-                output += '[Mô phỏng] Vui lòng nhập dữ liệu...\n';
-                output += 'Bạn đã nhập: 42 (giá trị mặc định)\n';
             }
 
             const coutLines = code.match(/cout\s*<<\s*["']([^"']*)["']/g);
@@ -1789,15 +2640,6 @@ int main() {
                         output += `\nKết quả tính toán: ${numbers[0]} + ${numbers[1]} = ${sum}\n`;
                     }
                 }
-            }
-
-            if (code.includes('for') || code.includes('while')) {
-                output += '\n[Vòng lặp] Mô phỏng kết quả:\n';
-                output += '1 2 3 4 5 6 7 8 9 10\n';
-            }
-
-            if (code.includes('if')) {
-                output += '\n[Điều kiện] Mô phỏng: Điều kiện đúng\n';
             }
 
             if (output === '<span class="success">✅ Chương trình chạy thành công!</span>\n\n') {
@@ -1839,8 +2681,7 @@ using namespace std;
 
 int main() {
     int a = 10, b = 20;
-    int sum = a + b;
-    cout << "Tong cua " << a << " va " << b << " la: " << sum << endl;
+    cout << "Tong cua " << a << " va " << b << " la: " << a + b << endl;
     return 0;
 }`
                 },
@@ -1940,6 +2781,248 @@ int main() {
             }
         }
 
+        // ============ AI ASSISTANT ============
+        const chatBody = document.getElementById('chatBody');
+        const aiQuestion = document.getElementById('aiQuestion');
+
+        function addMessage(role, text) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${role}`;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'avatar';
+            avatar.textContent = role === 'user' ? '👤' : '🤖';
+            
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.innerHTML = text;
+            
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(bubble);
+            chatBody.appendChild(messageDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function showTyping() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'chat-message ai';
+            typingDiv.id = 'typingIndicator';
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'avatar';
+            avatar.textContent = '🤖';
+            
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+            
+            typingDiv.appendChild(avatar);
+            typingDiv.appendChild(bubble);
+            chatBody.appendChild(typingDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function removeTyping() {
+            const typing = document.getElementById('typingIndicator');
+            if (typing) typing.remove();
+        }
+
+        function getAIResponse(question) {
+            const q = question.toLowerCase();
+            
+            if (q.includes('con trỏ') || q.includes('pointer')) {
+                return `🔗 <b>Con trỏ (Pointer) trong C++</b><br><br>
+Con trỏ là một biến lưu trữ <span class="highlight-text">địa chỉ bộ nhớ</span> của một biến khác.<br><br>
+<b>Ví dụ:</b>
+<div class="code-block"><pre>
+int number = 42;
+int* ptr = &number;  // ptr lưu địa chỉ của number
+
+cout << *ptr;  // In ra giá trị: 42
+</pre></div>
+<b>📌 Lưu ý:</b>
+• <span class="highlight-text">*ptr</span> - lấy giá trị tại địa chỉ mà ptr trỏ đến
+• <span class="highlight-text">&number</span> - lấy địa chỉ của biến number
+• <span class="highlight-text">new</span> - cấp phát bộ nhớ động
+• <span class="highlight-text">delete</span> - giải phóng bộ nhớ động`;
+            }
+
+            if (q.includes('class') && (q.includes('object') || q.includes('đối tượng'))) {
+                return `🏛️ <b>Class vs Object trong C++</b><br><br>
+<span class="highlight-text">Class (Lớp):</span> Là bản thiết kế, khuôn mẫu để tạo ra các đối tượng.<br>
+<span class="highlight-text">Object (Đối tượng):</span> Là thể hiện cụ thể của class.<br><br>
+<b>Ví dụ:</b>
+<div class="code-block"><pre>
+class Student {  // Class
+public:
+    string name;
+    int age;
+};
+
+Student s1;  // Object - thể hiện cụ thể
+s1.name = "An";
+s1.age = 20;
+</pre></div>
+<b>💡 Mẹo:</b> Class giống như bản vẽ xây nhà, Object là ngôi nhà thật!`;
+            }
+
+            if (q.includes('vector') && q.includes('mảng')) {
+                return `📦 <b>Vector vs Array trong C++</b><br><br>
+<span class="highlight-text">Array (Mảng):</span> Kích thước cố định, khởi tạo nhanh.<br>
+<span class="highlight-text">Vector:</span> Kích thước động, linh hoạt hơn.<br><br>
+<b>So sánh:</b>
+<div class="code-block"><pre>
+// Array - cố định
+int arr[5] = {1, 2, 3, 4, 5};
+
+// Vector - động
+vector<int> v = {1, 2, 3};
+v.push_back(4);  // Thêm phần tử mới
+v.pop_back();    // Xóa phần tử cuối
+</pre></div>
+<b>✅ Khi nào dùng Vector?</b>
+• Không biết trước số lượng phần tử
+• Cần thêm/xóa phần tử thường xuyên
+• Cần các tính năng như sort, find, v.v.`;
+            }
+
+            if (q.includes('stl')) {
+                return `📚 <b>STL - Standard Template Library</b><br><br>
+STL là thư viện chuẩn của C++, cung cấp các container và thuật toán sẵn có.<br><br>
+<b>Các thành phần chính:</b>
+• <span class="highlight-text">Container</span>: vector, list, map, set, v.v.
+• <span class="highlight-text">Algorithm</span>: sort, find, reverse, v.v.
+• <span class="highlight-text">Iterator</span>: Duyệt qua các phần tử<br><br>
+<b>Ví dụ với Vector:</b>
+<div class="code-block"><pre>
+#include <vector>
+#include <algorithm>
+
+vector<int> v = {5, 2, 8, 1};
+sort(v.begin(), v.end());  // Sắp xếp
+
+for (int x : v) {
+    cout << x << " ";  // 1 2 5 8
+}
+</pre></div>`;
+            }
+
+            if (q.includes('kế thừa') || q.includes('inheritance')) {
+                return `🧬 <b>Kế thừa (Inheritance) trong C++</b><br><br>
+Kế thừa cho phép class con <span class="highlight-text">kế thừa</span> các thuộc tính và phương thức từ class cha.<br><br>
+<b>Ví dụ:</b>
+<div class="code-block"><pre>
+class Animal {  // Class cha
+public:
+    void eat() {
+        cout << "Eating...";
+    }
+};
+
+class Dog : public Animal {  // Class con
+public:
+    void bark() {
+        cout << "Gau gau!";
+    }
+};
+
+Dog myDog;
+myDog.eat();   // Kế thừa từ Animal
+myDog.bark();  // Riêng của Dog
+</pre></div>
+<b>🔹 Lợi ích:</b>
+• Tái sử dụng code
+• Mở rộng chức năng
+• Dễ bảo trì, nâng cấp`;
+            }
+
+            if (q.includes('dấu ;') || q.includes('thiếu dấu')) {
+                return `🔧 <b>Sửa lỗi thiếu dấu ; trong C++</b><br><br>
+<span class="highlight-text">Dấu ;</span> là dấu kết thúc mỗi câu lệnh trong C++.<br><br>
+<b>❌ Lỗi sai:</b>
+<div class="code-block"><pre>
+int a = 10   // ❌ Thiếu dấu ;
+cout << a    // ❌ Thiếu dấu ;
+</pre></div>
+
+<b>✅ Sửa đúng:</b>
+<div class="code-block"><pre>
+int a = 10;   // ✅ Có dấu ;
+cout << a;    // ✅ Có dấu ;
+</pre></div>
+
+<b>📌 Các dấu không cần ;</b>
+• <span class="highlight-text">#include</span>
+• <span class="highlight-text">using namespace</span>
+• <span class="highlight-text">{ }</span> - Khối lệnh
+• <span class="highlight-text">if, for, while</span> - Điều kiện`;
+            }
+
+            if (q.includes('cout') || q.includes('cin') || q.includes('in ra')) {
+                return `💻 <b>cout và cin trong C++</b><br><br>
+<span class="highlight-text">cout</span> - Xuất dữ liệu ra màn hình<br>
+<span class="highlight-text">cin</span> - Nhập dữ liệu từ bàn phím<br><br>
+<b>Ví dụ:</b>
+<div class="code-block"><pre>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    
+    cout << "Nhap tuoi: ";  // In ra màn hình
+    cin >> age;             // Nhập từ bàn phím    
+    cout << "Tuoi cua ban: " << age;
+    return 0;
+}
+</pre></div>
+<b>📌 Lưu ý:</b>
+• <span class="highlight-text">cout <<</span> - In ra
+• <span class="highlight-text">cin >></span> - Nhập vào
+• <span class="highlight-text">endl</span> - Xuống dòng mới`;
+            }
+
+            return `🤔 <b>Tôi chưa hiểu câu hỏi lắm!</b><br><br>
+Bạn có thể hỏi tôi về:<br>
+• <span class="highlight-text">Con trỏ</span> là gì?<br>
+• <span class="highlight-text">Class</span> và <span class="highlight-text">Object</span> khác nhau?<br>
+• <span class="highlight-text">Vector</span> và <span class="highlight-text">mảng</span> khác nhau?<br>
+• <span class="highlight-text">STL</span> là gì?<br>
+• <span class="highlight-text">Kế thừa</span> trong C++?<br>
+• Sửa lỗi <span class="highlight-text">thiếu dấu ;</span><br>
+• <span class="highlight-text">cout</span> và <span class="highlight-text">cin</span> là gì?<br><br>
+Hãy hỏi lại nhé! 😊`;
+        }
+
+        function askAI() {
+            const question = aiQuestion.value.trim();
+            if (!question) {
+                aiQuestion.style.borderColor = '#f5576c';
+                setTimeout(() => aiQuestion.style.borderColor = 'rgba(255,255,255,0.1)', 2000);
+                return;
+            }
+
+            addMessage('user', question);
+            aiQuestion.value = '';
+            document.querySelector('.ai-chat-footer button').disabled = true;
+
+            showTyping();
+
+            const delay = 500 + Math.random() * 1000;
+            setTimeout(() => {
+                removeTyping();
+                const response = getAIResponse(question);
+                addMessage('ai', response);
+                document.querySelector('.ai-chat-footer button').disabled = false;
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, delay);
+        }
+
+        function askSuggestion(question) {
+            aiQuestion.value = question;
+            askAI();
+        }
+
         // ============ QUIZ ============
         function checkQuiz() {
             const answers = {
@@ -1973,27 +3056,27 @@ int main() {
                 className = 'correct';
             } else if (percent >= 50) {
                 message = `📖 Khá ổn! Bạn đúng ${correct}/${total} câu (${percent}%). Hãy ôn lại nhé!`;
-                className = 'wrong';
+                className = 'info';
             } else {
                 message = `😅 Bạn đúng ${correct}/${total} câu (${percent}%). Đừng nản, hãy học lại từ đầu!`;
                 className = 'wrong';
             }
 
             resultDiv.textContent = message;
-            resultDiv.style.display = 'block';
-            resultDiv.style.background = className === 'correct' ? 'rgba(106,153,85,0.3)' : 'rgba(245,87,108,0.3)';
-            resultDiv.style.border = className === 'correct' ? '1px solid #6a9955' : '1px solid #f5576c';
-            resultDiv.style.color = className === 'correct' ? '#6a9955' : '#f5576c';
+            resultDiv.className = `quiz-result ${className}`;
         }
 
-        // ============ KEYBOARD SHORTCUT ============
+        // ============ KEYBOARD SHORTCUTS ============
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey && e.key === 'Enter') {
                 e.preventDefault();
-                runCode();
+                const activeSection = document.querySelector('.section.active');
+                if (activeSection && activeSection.id === 'editor') {
+                    runCode();
+                }
             }
             
-            if (e.key >= '1' && e.key <= '9' && !e.ctrlKey && !e.metaKey) {
+            if (e.key >= '1' && e.key <= '0' && !e.ctrlKey && !e.metaKey) {
                 const buttons = document.querySelectorAll('.nav button');
                 const index = parseInt(e.key) - 1;
                 if (buttons[index]) {
@@ -2004,10 +3087,10 @@ int main() {
 
         // ============ INIT ============
         updateProgress('intro');
-        console.log('🚀 C++ Toàn Tập đã sẵn sàng!');
-        console.log('💡 Nhấn Ctrl + Enter để chạy code');
+        console.log('🚀 C++ Toàn Tập với AI đã sẵn sàng!');
+        console.log('💡 Nhấn Ctrl + Enter để chạy code (tại tab Editor)');
         console.log('💡 Nhấn phím 1-9 để chuyển tab');
-        console.log('💡 Click vào bài tập để load code');
+        console.log('💡 Hỏi AI bất kỳ câu hỏi nào về C++');
     </script>
 </body>
 </html>
