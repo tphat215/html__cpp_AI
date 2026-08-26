@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Học C++ Toàn Tập - Code & Thực Hành</title>
     <style>
-        /* ============ RESET & BASE ============ */
+        /* ===================================================================
+           RESET & BASE
+           =================================================================== */
         * {
             margin: 0;
             padding: 0;
@@ -31,7 +33,9 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
-        /* ============ HEADER ============ */
+        /* ===================================================================
+           HEADER
+           =================================================================== */
         .header {
             text-align: center;
             padding: 30px 0;
@@ -67,7 +71,107 @@
             border: 1px solid rgba(79, 172, 254, 0.3);
         }
 
-        /* ============ NAVIGATION ============ */
+        /* ===================================================================
+           SOCIAL LINKS
+           =================================================================== */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-links .facebook {
+            background: #1877f2;
+            border-color: #1877f2;
+        }
+        .social-links .facebook:hover {
+            background: #166fe5;
+            box-shadow: 0 10px 30px rgba(24, 119, 242, 0.3);
+        }
+
+        .social-links .discord {
+            background: #5865f2;
+            border-color: #5865f2;
+        }
+        .social-links .discord:hover {
+            background: #4752c4;
+            box-shadow: 0 10px 30px rgba(88, 101, 242, 0.3);
+        }
+
+        .social-links .vscode {
+            background: #007acc;
+            border-color: #007acc;
+        }
+        .social-links .vscode:hover {
+            background: #0066aa;
+            box-shadow: 0 10px 30px rgba(0, 122, 204, 0.3);
+        }
+
+        .social-links .github {
+            background: #333;
+            border-color: #333;
+        }
+        .social-links .github:hover {
+            background: #222;
+            box-shadow: 0 10px 30px rgba(51, 51, 51, 0.3);
+        }
+
+        .social-links .youtube {
+            background: #ff0000;
+            border-color: #ff0000;
+        }
+        .social-links .youtube:hover {
+            background: #cc0000;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+        }
+
+        .social-links .social-icon {
+            font-size: 1.2rem;
+        }
+
+        /* ===================================================================
+           PROGRESS BAR
+           =================================================================== */
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            border-radius: 2px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        /* ===================================================================
+           NAVIGATION
+           =================================================================== */
         .nav {
             display: flex;
             justify-content: center;
@@ -102,7 +206,9 @@
             color: #fff;
         }
 
-        /* ============ CONTENT SECTIONS ============ */
+        /* ===================================================================
+           CONTENT SECTIONS
+           =================================================================== */
         .section {
             display: none;
             animation: fadeIn 0.5s ease;
@@ -123,7 +229,9 @@
             }
         }
 
-        /* ============ CARDS ============ */
+        /* ===================================================================
+           CARDS
+           =================================================================== */
         .card {
             background: rgba(255, 255, 255, 0.06);
             border-radius: 15px;
@@ -181,7 +289,9 @@
             font-weight: 600;
         }
 
-        /* ============ TABLE ============ */
+        /* ===================================================================
+           TABLE
+           =================================================================== */
         .table-wrap {
             overflow-x: auto;
             margin: 15px 0;
@@ -213,7 +323,9 @@
             background: rgba(255, 255, 255, 0.05);
         }
 
-        /* ============ TIMELINE ============ */
+        /* ===================================================================
+           TIMELINE
+           =================================================================== */
         .timeline {
             padding-left: 20px;
             border-left: 3px solid #4facfe;
@@ -248,7 +360,9 @@
             margin-top: 3px;
         }
 
-        /* ============ CODE BLOCK ============ */
+        /* ===================================================================
+           CODE BLOCK
+           =================================================================== */
         .code-block {
             background: #1a1a2e;
             border-radius: 12px;
@@ -275,7 +389,9 @@
         .code-block .preprocessor { color: #9cdcfe; }
         .code-block .operator { color: #d4d4d4; }
 
-        /* ============ FEATURE GRID ============ */
+        /* ===================================================================
+           FEATURE GRID
+           =================================================================== */
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -336,7 +452,9 @@
             color: #00f2fe;
         }
 
-        /* ============ STATS ============ */
+        /* ===================================================================
+           STATS
+           =================================================================== */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -361,7 +479,9 @@
             margin-top: 5px;
         }
 
-        /* ============ TAGS ============ */
+        /* ===================================================================
+           TAGS
+           =================================================================== */
         .tags {
             display: flex;
             flex-wrap: wrap;
@@ -402,7 +522,9 @@
             border-color: rgba(0, 242, 254, 0.2);
         }
 
-        /* ============ CODE EDITOR ============ */
+        /* ===================================================================
+           CODE EDITOR
+           =================================================================== */
         .code-editor-wrapper {
             background: #1a1a2e;
             border-radius: 12px;
@@ -478,7 +600,7 @@
 
         .code-editor-body textarea {
             width: 100%;
-            min-height: 300px;
+            min-height: 350px;
             background: #0d0d1a;
             color: #e8e8f0;
             border: none;
@@ -496,7 +618,9 @@
             box-shadow: inset 0 0 20px rgba(79, 172, 254, 0.05);
         }
 
-        /* ============ OUTPUT ============ */
+        /* ===================================================================
+           OUTPUT
+           =================================================================== */
         .output-wrapper {
             background: #0d0d1a;
             border-radius: 12px;
@@ -532,8 +656,8 @@
 
         .output-body {
             padding: 15px 20px;
-            min-height: 100px;
-            max-height: 300px;
+            min-height: 120px;
+            max-height: 350px;
             overflow-y: auto;
             font-family: 'Consolas', 'Courier New', monospace;
             font-size: 0.9rem;
@@ -555,7 +679,9 @@
             color: #4facfe;
         }
 
-        /* ============ CHALLENGES ============ */
+        /* ===================================================================
+           CHALLENGES
+           =================================================================== */
         .challenge-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -624,25 +750,9 @@
             color: #6a9955;
         }
 
-        /* ============ PROGRESS BAR ============ */
-        .progress-bar {
-            width: 100%;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 2px;
-            margin: 20px 0;
-            overflow: hidden;
-        }
-
-        .progress-bar .progress {
-            height: 100%;
-            background: linear-gradient(90deg, #4facfe, #00f2fe);
-            border-radius: 2px;
-            transition: width 0.5s ease;
-            width: 0%;
-        }
-
-        /* ============ AI CHAT ============ */
+        /* ===================================================================
+           AI CHAT
+           =================================================================== */
         .ai-chat-wrapper {
             background: #1a1a2e;
             border-radius: 12px;
@@ -837,7 +947,9 @@
             transform: none;
         }
 
-        /* ============ SUGGESTION CHIPS ============ */
+        /* ===================================================================
+           SUGGESTION CHIPS
+           =================================================================== */
         .suggestion-chips {
             display: flex;
             flex-wrap: wrap;
@@ -863,7 +975,9 @@
             transform: translateY(-2px);
         }
 
-        /* ============ TYPING INDICATOR ============ */
+        /* ===================================================================
+           TYPING INDICATOR
+           =================================================================== */
         .typing-indicator {
             display: flex;
             gap: 4px;
@@ -890,7 +1004,9 @@
             40% { transform: scale(1); opacity: 1; }
         }
 
-        /* ============ QUIZ ============ */
+        /* ===================================================================
+           QUIZ
+           =================================================================== */
         .quiz-box {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
@@ -981,7 +1097,9 @@
             color: #4facfe;
         }
 
-        /* ============ RESPONSIVE ============ */
+        /* ===================================================================
+           RESPONSIVE
+           =================================================================== */
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2rem;
@@ -1023,6 +1141,10 @@
             .code-editor-header .actions {
                 justify-content: center;
             }
+            .social-links a {
+                padding: 6px 14px;
+                font-size: 0.8rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1052,9 +1174,21 @@
             .code-block pre {
                 font-size: 0.75rem;
             }
+            .social-links {
+                gap: 8px;
+            }
+            .social-links a {
+                padding: 5px 10px;
+                font-size: 0.7rem;
+            }
+            .social-links a .social-icon {
+                font-size: 0.9rem;
+            }
         }
 
-        /* ============ SCROLLBAR ============ */
+        /* ===================================================================
+           SCROLLBARS
+           =================================================================== */
         .output-body::-webkit-scrollbar,
         .ai-chat-body::-webkit-scrollbar {
             width: 6px;
@@ -1076,17 +1210,46 @@
 </head>
 <body>
     <div class="container">
-        <!-- ==================== HEADER ==================== -->
+        <!-- ================================================================
+             HEADER
+             ================================================================ -->
         <div class="header">
             <h1>⚡ C++ Toàn Tập</h1>
             <p class="subtitle">Học lý thuyết - Thực hành code - Hỏi AI - Chinh phục mọi bài tập</p>
             <span class="badge">🎯 12+ Bài học | 10+ Ví dụ | 8 Bài tập | 🤖 Trợ lý AI</span>
+            
+            <!-- SOCIAL LINKS -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/t.phat215" target="_blank" class="facebook">
+                    <span class="social-icon">📘</span>
+                    Facebook
+                </a>
+                <a href="https://discord.gg/Q2BMRQ2P5" target="_blank" class="discord">
+                    <span class="social-icon">💬</span>
+                    Discord
+                </a>
+                <a href="https://code.visualstudio.com/download" target="_blank" class="vscode">
+                    <span class="social-icon">📝</span>
+                    Tải VS Code
+                </a>
+                <a href="https://github.com/tphat215/tphat215hello" target="_blank" class="github">
+                    <span class="social-icon">🐙</span>
+                    GitHub
+                </a>
+                <a href="https://www.youtube.com/watch?v=KsVqBIWtRec" target="_blank" class="youtube">
+                    <span class="social-icon">▶️</span>
+                    YouTube
+                </a>
+            </div>
+            
             <div class="progress-bar">
                 <div class="progress" id="progressBar"></div>
             </div>
         </div>
 
-        <!-- ==================== NAVIGATION ==================== -->
+        <!-- ================================================================
+             NAVIGATION
+             ================================================================ -->
         <div class="nav">
             <button class="active" data-section="intro">📖 Giới thiệu</button>
             <button data-section="basic">🔰 Cơ bản</button>
@@ -1100,8 +1263,11 @@
             <button data-section="quiz">🧠 Quiz</button>
         </div>
 
-        <!-- ==================== SECTION 1: GIỚI THIỆU ==================== -->
+        <!-- ================================================================
+             SECTION 1: GIỚI THIỆU
+             ================================================================ -->
         <div id="intro" class="section active">
+            <!-- Card 1: C++ là gì? -->
             <div class="card">
                 <h3>🔹 C++ là gì?</h3>
                 <p>
@@ -1114,6 +1280,7 @@
                 </p>
             </div>
 
+            <!-- Card 2: Lịch sử phát triển -->
             <div class="card">
                 <h3>🔹 Lịch sử phát triển</h3>
                 <div class="timeline">
@@ -1160,6 +1327,7 @@
                 </div>
             </div>
 
+            <!-- Card 3: Tại sao nên học C++? -->
             <div class="card">
                 <h3>🔹 Tại sao nên học C++?</h3>
                 <div class="feature-grid">
@@ -1195,12 +1363,13 @@
                 </div>
             </div>
 
+            <!-- Card 4: Thống kê thị trường C++ -->
             <div class="card">
                 <h3>🔹 Thống kê thị trường C++</h3>
                 <div class="stats-grid">
                     <div class="stat-item">
                         <div class="stat-number" style="color: #4facfe;">#12</div>
-                        <div class="stat-label">Vị trí trong bảng xếp hạng<br>ngôn ngữ lập trình (TIOBE)</div>
+                        <div class="stat-label">Vị trí trong bảng xếp hạng<br>ngôn ngữ lập trình (TIOBE Index 2024)</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number" style="color: #f5576c;">400.000+</div>
@@ -1215,8 +1384,14 @@
                         <div class="stat-label">Năm phát triển và<br>không ngừng phát triển</div>
                     </div>
                 </div>
+                <div style="margin-top: 15px; color: #b0b0c0; font-size: 0.95rem; line-height: 1.8;">
+                    <p>📊 <span class="highlight-blue">Nhu cầu tuyển dụng:</span> C++ luôn nằm trong top 10 ngôn ngữ được tìm kiếm nhiều nhất trên các nền tảng tuyển dụng như LinkedIn, Indeed, và VietnamWorks.</p>
+                    <p>📈 <span class="highlight-blue">Xu hướng phát triển:</span> Với sự bùng nổ của AI, IoT, và game, nhu cầu về kỹ sư C++ dự kiến tăng <span class="highlight">25%</span> trong 5 năm tới.</p>
+                    <p>🏆 <span class="highlight-blue">Các công ty tuyển dụng:</span> Google, Microsoft, Amazon, Facebook, NVIDIA, Intel, Samsung, và nhiều tập đoàn công nghệ hàng đầu.</p>
+                </div>
             </div>
 
+            <!-- Card 5: C++ được dùng ở đâu? -->
             <div class="card">
                 <h3>🔹 C++ được dùng ở đâu?</h3>
                 <div class="tags">
@@ -1232,11 +1407,17 @@
                     <span class="tag tag-purple">🏦 Hệ thống tài chính</span>
                     <span class="tag tag-cyan">🔬 Nghiên cứu khoa học</span>
                     <span class="tag tag-orange">🏭 Hệ thống nhúng IoT</span>
+                    <span class="tag">⚡ Phần mềm điện tử</span>
+                    <span class="tag tag-pink">📡 Viễn thông</span>
+                    <span class="tag tag-green">🛡️ Bảo mật & Mật mã</span>
+                    <span class="tag tag-purple">🎨 Đồ họa 3D & Animation</span>
                 </div>
             </div>
         </div>
 
-        <!-- ==================== SECTION 2: CƠ BẢN ==================== -->
+        <!-- ================================================================
+             SECTION 2: CƠ BẢN
+             ================================================================ -->
         <div id="basic" class="section">
             <div class="card">
                 <h3>🔰 Cấu trúc chương trình C++</h3>
@@ -1396,7 +1577,9 @@ cout &lt;&lt; <span class="string">"Điểm: "</span> &lt;&lt; score &lt;&lt; en
             </div>
         </div>
 
-        <!-- ==================== SECTION 3: CÚ PHÁP ==================== -->
+        <!-- ================================================================
+             SECTION 3: CÚ PHÁP
+             ================================================================ -->
         <div id="syntax" class="section">
             <div class="card">
                 <h3>💻 Toán tử trong C++</h3>
@@ -1618,7 +1801,9 @@ cout &lt;&lt; <span class="string">"matrix[1][2] = "</span> &lt;&lt; matrix[<spa
             </div>
         </div>
 
-        <!-- ==================== SECTION 4: TÍNH NĂNG ==================== -->
+        <!-- ================================================================
+             SECTION 4: TÍNH NĂNG
+             ================================================================ -->
         <div id="features" class="section">
             <div class="card">
                 <h3>✨ Hàm (Function) trong C++</h3>
@@ -1647,19 +1832,27 @@ cout &lt;&lt; <span class="string">"matrix[1][2] = "</span> &lt;&lt; matrix[<spa
     cout &lt;&lt; msg &lt;&lt; endl;
 }
 
+<span class="comment">// Hàm inline (tối ưu tốc độ)</span>
+<span class="keyword">inline</span> <span class="type">int</span> <span class="function">square</span>(<span class="type">int</span> x) {
+    <span class="keyword">return</span> x * x;
+}
+
 <span class="comment">// Sử dụng hàm</span>
 <span class="type">int</span> sum = add(<span class="number">5</span>, <span class="number">3</span>);
 cout &lt;&lt; <span class="string">"5 + 3 = "</span> &lt;&lt; sum &lt;&lt; endl;
 
 greet(<span class="string">"An"</span>);
 displayMessage();        <span class="comment">// Hello</span>
-displayMessage(<span class="string">"Goodbye"</span>); <span class="comment">// Goodbye</span></pre>
+displayMessage(<span class="string">"Goodbye"</span>); <span class="comment">// Goodbye</span>
+
+cout &lt;&lt; <span class="string">"Bình phương của 4: "</span> &lt;&lt; square(<span class="number">4</span>) &lt;&lt; endl;</pre>
                 </div>
                 <ul>
                     <li><span class="highlight-blue">Function</span> - Đoạn code tái sử dụng</li>
                     <li><span class="highlight-blue">Tham số</span> - Dữ liệu đầu vào</li>
                     <li><span class="highlight-blue">return</span> - Giá trị trả về</li>
                     <li><span class="highlight-blue">void</span> - Không trả về</li>
+                    <li><span class="highlight-blue">inline</span> - Tối ưu tốc độ</li>
                 </ul>
             </div>
 
@@ -1682,6 +1875,13 @@ displayMessage(<span class="string">"Goodbye"</span>); <span class="comment">// 
         gpa = g;
     }
 
+    <span class="comment">// Constructor mặc định</span>
+    Student() {
+        name = <span class="string">"Unknown"</span>;
+        age = <span class="number">0</span>;
+        gpa = <span class="number">0.0</span>;
+    }
+
     <span class="comment">// Getter - Lấy giá trị</span>
     <span class="type">string</span> <span class="function">getName</span>() { <span class="keyword">return</span> name; }
     <span class="type">int</span> <span class="function">getAge</span>() { <span class="keyword">return</span> age; }
@@ -1690,6 +1890,7 @@ displayMessage(<span class="string">"Goodbye"</span>); <span class="comment">// 
     <span class="comment">// Setter - Gán giá trị</span>
     <span class="type">void</span> <span class="function">setName</span>(<span class="type">string</span> n) { name = n; }
     <span class="type">void</span> <span class="function">setAge</span>(<span class="type">int</span> a) { age = a; }
+    <span class="type">void</span> <span class="function">setGPA</span>(<span class="type">float</span> g) { gpa = g; }
 
     <span class="comment">// Method - Hành động</span>
     <span class="type">void</span> <span class="function">display</span>() {
@@ -1717,13 +1918,21 @@ Student s1(<span class="string">"Nguyễn Văn A"</span>, <span class="number">2
 Student s2(<span class="string">"Trần Thị B"</span>, <span class="number">21</span>, <span class="number">2.9</span>);
 
 s1.display();
-s2.display();</pre>
+s2.display();
+
+<span class="comment">// Sử dụng setter</span>
+Student s3;
+s3.setName(<span class="string">"Lê Văn C"</span>);
+s3.setAge(<span class="number">22</span>);
+s3.setGPA(<span class="number">3.5</span>);
+s3.display();</pre>
                 </div>
                 <ul>
                     <li><span class="highlight-blue">Class</span> - Khuôn mẫu cho đối tượng</li>
                     <li><span class="highlight-blue">Object</span> - Thể hiện cụ thể của class</li>
                     <li><span class="highlight-blue">Constructor</span> - Khởi tạo đối tượng</li>
                     <li><span class="highlight-blue">Getter/Setter</span> - Truy cập dữ liệu private</li>
+                    <li><span class="highlight-blue">Destructor</span> - Dọn dẹp khi đối tượng bị hủy</li>
                 </ul>
             </div>
 
@@ -1867,12 +2076,21 @@ cout &lt;&lt; <span class="string">"List: "</span>;
 <span class="keyword">for</span> (<span class="type">int</span> x : myList) {
     cout &lt;&lt; x &lt;&lt; <span class="string">" "</span>;
 }
-<span class="comment">// Output: 5 10 20 30 40</span></pre>
+<span class="comment">// Output: 5 10 20 30 40</span>
+
+<span class="comment">// ========== ALGORITHM ==========</span>
+<span class="type">vector</span>&lt;<span class="type">int</span>&gt; data = {<span class="number">5</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">9</span>};
+<span class="comment">// Tìm số lớn nhất</span>
+<span class="type">int</span> maxVal = *max_element(data.begin(), data.end());
+<span class="comment">// Đảo ngược</span>
+reverse(data.begin(), data.end());</pre>
                 </div>
             </div>
         </div>
 
-        <!-- ==================== SECTION 5: VÍ DỤ ==================== -->
+        <!-- ================================================================
+             SECTION 5: VÍ DỤ
+             ================================================================ -->
         <div id="examples" class="section">
             <div class="card">
                 <h3>📝 Ví dụ 1: Tính tổng, hiệu, tích, thương</h3>
@@ -2094,7 +2312,9 @@ cout &lt;&lt; <span class="string">"List: "</span>;
             </div>
         </div>
 
-        <!-- ==================== SECTION 6: NÂNG CAO ==================== -->
+        <!-- ================================================================
+             SECTION 6: NÂNG CAO
+             ================================================================ -->
         <div id="advanced" class="section">
             <div class="card">
                 <h3>🚀 Con trỏ (Pointer)</h3>
@@ -2118,7 +2338,12 @@ cout &lt;&lt; <span class="string">"Giá trị mới: "</span> &lt;&lt; number &
     cout &lt;&lt; <span class="string">"Con trỏ rỗng"</span> &lt;&lt; endl;
 }
 
-<span class="comment">// Cấp phát động</span>
+<span class="comment">// Cấp phát động với new</span>
+<span class="type">int</span>* dynamicInt = <span class="keyword">new</span> <span class="type">int</span>(<span class="number">99</span>);
+cout &lt;&lt; <span class="string">"Giá trị động: "</span> &lt;&lt; *dynamicInt &lt;&lt; endl;
+<span class="keyword">delete</span> dynamicInt;  <span class="comment">// Giải phóng bộ nhớ</span>
+
+<span class="comment">// Cấp phát mảng động</span>
 <span class="type">int</span>* dynamicArray = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">5</span>];
 <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) {
     dynamicArray[i] = i * <span class="number">10</span>;
@@ -2269,7 +2494,9 @@ cout &lt;&lt; <span class="string">"5 * 2 = "</span> &lt;&lt; multiply(<span cla
             </div>
         </div>
 
-        <!-- ==================== SECTION 7: CODE EDITOR ==================== -->
+        <!-- ================================================================
+             SECTION 7: CODE EDITOR
+             ================================================================ -->
         <div id="editor" class="section">
             <div class="card">
                 <h3>💻 Code Editor - Viết và chạy C++</h3>
@@ -2326,7 +2553,9 @@ int main() {
             </div>
         </div>
 
-        <!-- ==================== SECTION 8: CHALLENGES ==================== -->
+        <!-- ================================================================
+             SECTION 8: CHALLENGES
+             ================================================================ -->
         <div id="challenges" class="section">
             <div class="card">
                 <h3>🏆 Bài tập thực hành</h3>
@@ -2394,7 +2623,9 @@ int main() {
             </div>
         </div>
 
-        <!-- ==================== SECTION 9: AI ASSISTANT ==================== -->
+        <!-- ================================================================
+             SECTION 9: AI ASSISTANT
+             ================================================================ -->
         <div id="aiassistant" class="section">
             <div class="card">
                 <h3>🤖 Trợ lý AI - Hỏi đáp về C++</h3>
@@ -2445,7 +2676,9 @@ int main() {
             </div>
         </div>
 
-        <!-- ==================== SECTION 10: QUIZ ==================== -->
+        <!-- ================================================================
+             SECTION 10: QUIZ
+             ================================================================ -->
         <div id="quiz" class="section">
             <div class="card">
                 <h3>🧠 Kiểm tra kiến thức C++</h3>
@@ -2493,20 +2726,76 @@ int main() {
                     </div>
                 </div>
 
+                <div class="quiz-box">
+                    <p class="question"><strong>Câu 5:</strong> STL trong C++ là gì?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="A"> Standard Template Library</label>
+                        <label><input type="radio" name="q5" value="B"> Simple Text Language</label>
+                        <label><input type="radio" name="q5" value="C"> System Template Library</label>
+                        <label><input type="radio" name="q5" value="D"> Standard Type Library</label>
+                    </div>
+                </div>
+
+                <div class="quiz-box">
+                    <p class="question"><strong>Câu 6:</strong> Từ khóa nào dùng để cấp phát bộ nhớ động?</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="A"> malloc</label>
+                        <label><input type="radio" name="q6" value="B"> new</label>
+                        <label><input type="radio" name="q6" value="C"> create</label>
+                        <label><input type="radio" name="q6" value="D"> alloc</label>
+                    </div>
+                </div>
+
                 <button class="btn-check" onclick="checkQuiz()">📊 Xem kết quả</button>
                 <div id="quizResult" class="quiz-result"></div>
             </div>
         </div>
 
-        <!-- ==================== FOOTER ==================== -->
-        <div style="text-align:center; padding:20px 0; border-top:1px solid rgba(255,255,255,0.05); margin-top:30px; color:#6a6a7a;">
-            <p>© 2024 Học C++ Toàn Tập | <a href="#" onclick="window.scrollTo(0,0); return false;" style="color:#4facfe; text-decoration:none;">⬆ Lên đầu trang</a></p>
+        <!-- ================================================================
+             FOOTER
+             ================================================================ -->
+        <div style="text-align:center; padding:20px 0; border-top:1px solid rgba(255,255,255,0.05); margin-top:30px;">
+            <!-- Social Links Footer -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/t.phat215" target="_blank" class="facebook">
+                    <span class="social-icon">📘</span>
+                    Facebook
+                </a>
+                <a href="https://discord.gg/your-invite-link" target="_blank" class="discord">
+                    <span class="social-icon">💬</span>
+                    Discord
+                </a>
+                <a href="https://code.visualstudio.com/download" target="_blank" class="vscode">
+                    <span class="social-icon">📝</span>
+                    Tải VS Code
+                </a>
+                <a href="https://github.com" target="_blank" class="github">
+                    <span class="social-icon">🐙</span>
+                    GitHub
+                </a>
+                <a href="https://www.youtube.com" target="_blank" class="youtube">
+                    <span class="social-icon">▶️</span>
+                    YouTube
+                </a>
+            </div>
+            
+            <p style="color: #6a6a7a; font-size: 0.9rem; margin-top: 15px;">
+                © 2024 Học C++ Toàn Tập | 
+                <a href="#" onclick="window.scrollTo(0,0); return false;" style="color:#4facfe; text-decoration:none;">⬆ Lên đầu trang</a>
+            </p>
+            <p style="color: #4a4a5a; font-size: 0.8rem; margin-top: 5px;">
+                🚀 Code is power - Học C++ để làm chủ công nghệ tương lai!
+            </p>
         </div>
     </div>
 
-    <!-- ==================== JAVASCRIPT ==================== -->
+    <!-- ================================================================
+         JAVASCRIPT
+         ================================================================ -->
     <script>
-        // ============ NAVIGATION ============
+        // ===================================================================
+        // NAVIGATION
+        // ===================================================================
         document.querySelectorAll('.nav button').forEach(button => {
             button.addEventListener('click', function() {
                 document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
@@ -2525,7 +2814,9 @@ int main() {
             document.getElementById('progressBar').style.width = progress + '%';
         }
 
-        // ============ CODE EDITOR ============
+        // ===================================================================
+        // CODE EDITOR
+        // ===================================================================
         const defaultCode = `#include <iostream>
 using namespace std;
 
@@ -2612,6 +2903,14 @@ int main() {
                 errors.push(`Số dấu { và } không khớp (${openBraces} vs ${closeBraces})`);
             }
 
+            if (code.includes('cout') && !code.match(/cout\s*<<\s*.*;/)) {
+                errors.push('Cú pháp cout không đúng. Dùng: cout << "text" << endl;');
+            }
+
+            if (code.includes('cin') && !code.match(/cin\s*>>\s*.*;/)) {
+                errors.push('Cú pháp cin không đúng. Dùng: cin >> variable;');
+            }
+
             return errors;
         }
 
@@ -2620,6 +2919,11 @@ int main() {
 
             if (code.includes('cout << "Hello, World!"')) {
                 output += 'Hello, World!\n';
+            }
+
+            if (code.includes('cin')) {
+                output += '[Mô phỏng] Vui lòng nhập dữ liệu...\n';
+                output += 'Bạn đã nhập: 42 (giá trị mặc định)\n';
             }
 
             const coutLines = code.match(/cout\s*<<\s*["']([^"']*)["']/g);
@@ -2642,6 +2946,15 @@ int main() {
                 }
             }
 
+            if (code.includes('for') || code.includes('while')) {
+                output += '\n[Vòng lặp] Mô phỏng kết quả:\n';
+                output += '1 2 3 4 5 6 7 8 9 10\n';
+            }
+
+            if (code.includes('if')) {
+                output += '\n[Điều kiện] Mô phỏng: Điều kiện đúng\n';
+            }
+
             if (output === '<span class="success">✅ Chương trình chạy thành công!</span>\n\n') {
                 output += '<span class="info">// Không có output nào được in ra\n';
                 output += '// Hãy thử thêm: cout << "Nội dung" << endl;</span>\n';
@@ -2650,7 +2963,9 @@ int main() {
             return output;
         }
 
-        // ============ LOAD CHALLENGE ============
+        // ===================================================================
+        // LOAD CHALLENGE
+        // ===================================================================
         function loadChallenge(id) {
             const challenges = {
                 1: {
@@ -2681,7 +2996,8 @@ using namespace std;
 
 int main() {
     int a = 10, b = 20;
-    cout << "Tong cua " << a << " va " << b << " la: " << a + b << endl;
+    int sum = a + b;
+    cout << "Tong cua " << a << " va " << b << " la: " << sum << endl;
     return 0;
 }`
                 },
@@ -2781,7 +3097,9 @@ int main() {
             }
         }
 
-        // ============ AI ASSISTANT ============
+        // ===================================================================
+        // AI ASSISTANT
+        // ===================================================================
         const chatBody = document.getElementById('chatBody');
         const aiQuestion = document.getElementById('aiQuestion');
 
@@ -2830,6 +3148,7 @@ int main() {
         function getAIResponse(question) {
             const q = question.toLowerCase();
             
+            // Con trỏ
             if (q.includes('con trỏ') || q.includes('pointer')) {
                 return `🔗 <b>Con trỏ (Pointer) trong C++</b><br><br>
 Con trỏ là một biến lưu trữ <span class="highlight-text">địa chỉ bộ nhớ</span> của một biến khác.<br><br>
@@ -2847,6 +3166,7 @@ cout << *ptr;  // In ra giá trị: 42
 • <span class="highlight-text">delete</span> - giải phóng bộ nhớ động`;
             }
 
+            // Class vs Object
             if (q.includes('class') && (q.includes('object') || q.includes('đối tượng'))) {
                 return `🏛️ <b>Class vs Object trong C++</b><br><br>
 <span class="highlight-text">Class (Lớp):</span> Là bản thiết kế, khuôn mẫu để tạo ra các đối tượng.<br>
@@ -2866,6 +3186,7 @@ s1.age = 20;
 <b>💡 Mẹo:</b> Class giống như bản vẽ xây nhà, Object là ngôi nhà thật!`;
             }
 
+            // Vector
             if (q.includes('vector') && q.includes('mảng')) {
                 return `📦 <b>Vector vs Array trong C++</b><br><br>
 <span class="highlight-text">Array (Mảng):</span> Kích thước cố định, khởi tạo nhanh.<br>
@@ -2886,6 +3207,7 @@ v.pop_back();    // Xóa phần tử cuối
 • Cần các tính năng như sort, find, v.v.`;
             }
 
+            // STL
             if (q.includes('stl')) {
                 return `📚 <b>STL - Standard Template Library</b><br><br>
 STL là thư viện chuẩn của C++, cung cấp các container và thuật toán sẵn có.<br><br>
@@ -2907,6 +3229,7 @@ for (int x : v) {
 </pre></div>`;
             }
 
+            // Kế thừa
             if (q.includes('kế thừa') || q.includes('inheritance')) {
                 return `🧬 <b>Kế thừa (Inheritance) trong C++</b><br><br>
 Kế thừa cho phép class con <span class="highlight-text">kế thừa</span> các thuộc tính và phương thức từ class cha.<br><br>
@@ -2936,6 +3259,7 @@ myDog.bark();  // Riêng của Dog
 • Dễ bảo trì, nâng cấp`;
             }
 
+            // Lỗi dấu ;
             if (q.includes('dấu ;') || q.includes('thiếu dấu')) {
                 return `🔧 <b>Sửa lỗi thiếu dấu ; trong C++</b><br><br>
 <span class="highlight-text">Dấu ;</span> là dấu kết thúc mỗi câu lệnh trong C++.<br><br>
@@ -2958,6 +3282,7 @@ cout << a;    // ✅ Có dấu ;
 • <span class="highlight-text">if, for, while</span> - Điều kiện`;
             }
 
+            // cout/cin
             if (q.includes('cout') || q.includes('cin') || q.includes('in ra')) {
                 return `💻 <b>cout và cin trong C++</b><br><br>
 <span class="highlight-text">cout</span> - Xuất dữ liệu ra màn hình<br>
@@ -2982,6 +3307,46 @@ int main() {
 • <span class="highlight-text">endl</span> - Xuống dòng mới`;
             }
 
+            // C++ vs Python
+            if (q.includes('c++') && q.includes('python')) {
+                return `⚡ <b>C++ vs Python - So sánh chi tiết</b><br><br>
+<table style="width:100%; color:#d0d0dc; border-collapse:collapse; font-size:0.9rem;">
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <th style="text-align:left; padding:8px; color:#4facfe;">Tiêu chí</th>
+        <th style="text-align:left; padding:8px; color:#f5576c;">C++</th>
+        <th style="text-align:left; padding:8px; color:#6a9955;">Python</th>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+        <td style="padding:8px;">🚀 Tốc độ</td>
+        <td style="padding:8px;">Rất nhanh (gần Assembly)</td>
+        <td style="padding:8px;">Chậm hơn (thông dịch)</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+        <td style="padding:8px;">📝 Kiểu dữ liệu</td>
+        <td style="padding:8px;">Tĩnh (Static typing)</td>
+        <td style="padding:8px;">Động (Dynamic typing)</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+        <td style="padding:8px;">🎮 Ứng dụng</td>
+        <td style="padding:8px;">Game, HĐH, Embedded</td>
+        <td style="padding:8px;">AI, Data Science, Web</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+        <td style="padding:8px;">🧠 Học tập</td>
+        <td style="padding:8px;">Khó hơn, cần hiểu sâu</td>
+        <td style="padding:8px;">Dễ học, cú pháp đơn giản</td>
+    </tr>
+    <tr>
+        <td style="padding:8px;">💼 Cơ hội việc làm</td>
+        <td style="padding:8px;">Lương cao, ít cạnh tranh</td>
+        <td style="padding:8px;">Nhiều việc, cạnh tranh hơn</td>
+    </tr>
+</table>
+<br>
+<b>💡 Kết luận:</b> Học C++ nếu bạn muốn hiểu sâu về máy tính và làm việc với hiệu năng cao. Học Python nếu bạn muốn bắt đầu nhanh và làm AI/Data Science.`;
+            }
+
+            // Mặc định
             return `🤔 <b>Tôi chưa hiểu câu hỏi lắm!</b><br><br>
 Bạn có thể hỏi tôi về:<br>
 • <span class="highlight-text">Con trỏ</span> là gì?<br>
@@ -2990,7 +3355,8 @@ Bạn có thể hỏi tôi về:<br>
 • <span class="highlight-text">STL</span> là gì?<br>
 • <span class="highlight-text">Kế thừa</span> trong C++?<br>
 • Sửa lỗi <span class="highlight-text">thiếu dấu ;</span><br>
-• <span class="highlight-text">cout</span> và <span class="highlight-text">cin</span> là gì?<br><br>
+• <span class="highlight-text">cout</span> và <span class="highlight-text">cin</span> là gì?<br>
+• So sánh <span class="highlight-text">C++ và Python</span><br><br>
 Hãy hỏi lại nhé! 😊`;
         }
 
@@ -3023,13 +3389,17 @@ Hãy hỏi lại nhé! 😊`;
             askAI();
         }
 
-        // ============ QUIZ ============
+        // ===================================================================
+        // QUIZ
+        // ===================================================================
         function checkQuiz() {
             const answers = {
                 q1: 'B',
                 q2: 'B',
                 q3: 'C',
-                q4: 'C'
+                q4: 'C',
+                q5: 'A',
+                q6: 'B'
             };
 
             let correct = 0;
@@ -3051,7 +3421,7 @@ Hãy hỏi lại nhé! 😊`;
             if (percent === 100) {
                 message = '🎉 Xuất sắc! Bạn đã trả lời đúng tất cả câu hỏi!';
                 className = 'correct';
-            } else if (percent >= 75) {
+            } else if (percent >= 80) {
                 message = `👍 Rất tốt! Bạn đúng ${correct}/${total} câu (${percent}%)`;
                 className = 'correct';
             } else if (percent >= 50) {
@@ -3066,7 +3436,9 @@ Hãy hỏi lại nhé! 😊`;
             resultDiv.className = `quiz-result ${className}`;
         }
 
-        // ============ KEYBOARD SHORTCUTS ============
+        // ===================================================================
+        // KEYBOARD SHORTCUTS
+        // ===================================================================
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey && e.key === 'Enter') {
                 e.preventDefault();
@@ -3085,12 +3457,15 @@ Hãy hỏi lại nhé! 😊`;
             }
         });
 
-        // ============ INIT ============
+        // ===================================================================
+        // INIT
+        // ===================================================================
         updateProgress('intro');
         console.log('🚀 C++ Toàn Tập với AI đã sẵn sàng!');
         console.log('💡 Nhấn Ctrl + Enter để chạy code (tại tab Editor)');
         console.log('💡 Nhấn phím 1-9 để chuyển tab');
         console.log('💡 Hỏi AI bất kỳ câu hỏi nào về C++');
+        console.log('📘 Kết nối với chúng tôi qua các nền tảng bên dưới!');
     </script>
 </body>
 </html>
