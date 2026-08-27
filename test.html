@@ -290,6 +290,117 @@
         }
 
         /* ===================================================================
+           VIP FEATURES
+           =================================================================== */
+        .vip-features {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #ffd700;
+            border-radius: 15px;
+        }
+
+        .vip-features.active {
+            display: block;
+        }
+
+        .vip-features h3 {
+            color: #ffd700;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .vip-features .tiktok-section {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .vip-features .tiktok-section iframe {
+            width: 100%;
+            max-width: 400px;
+            height: 600px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .vip-features .code-display {
+            background: #1a1a2e;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .vip-features .code-display pre {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: #e8e8f0;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .vip-features .code-display .comment { color: #6a9955; }
+        .vip-features .code-display .keyword { color: #c586c0; }
+        .vip-features .code-display .string { color: #ce9178; }
+        .vip-features .code-display .type { color: #4ec9b0; }
+        .vip-features .code-display .function { color: #dcdcaa; }
+        .vip-features .code-display .number { color: #b5cea8; }
+
+        /* ===================================================================
+           ADMIN FEATURES
+           =================================================================== */
+        .admin-features {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 0, 0, 0.1);
+            border: 2px solid #ff0000;
+            border-radius: 15px;
+        }
+
+        .admin-features.active {
+            display: block;
+        }
+
+        .admin-features h3 {
+            color: #ff0000;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .admin-features .full-code {
+            background: #1a1a2e;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            overflow-x: auto;
+            max-height: 500px;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 0, 0, 0.2);
+        }
+
+        .admin-features .full-code pre {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: #e8e8f0;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .admin-features .full-code .comment { color: #6a9955; }
+        .admin-features .full-code .keyword { color: #c586c0; }
+        .admin-features .full-code .string { color: #ce9178; }
+        .admin-features .full-code .type { color: #4ec9b0; }
+        .admin-features .full-code .function { color: #dcdcaa; }
+        .admin-features .full-code .number { color: #b5cea8; }
+        .admin-features .full-code .tag { color: #4facfe; }
+        .admin-features .full-code .attribute { color: #dcdcaa; }
+
+        /* ===================================================================
            TABLE
            =================================================================== */
         .table-wrap {
@@ -1185,6 +1296,20 @@
             color: #f5576c;
         }
 
+        .code-input-section .code-message.vip {
+            display: block;
+            background: rgba(255, 215, 0, 0.2);
+            border: 1px solid #ffd700;
+            color: #ffd700;
+        }
+
+        .code-input-section .code-message.admin {
+            display: block;
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid #ff0000;
+            color: #ff0000;
+        }
+
         /* ===================================================================
            RESPONSIVE
            =================================================================== */
@@ -1239,6 +1364,13 @@
             .code-input-section .input-group button {
                 width: 100%;
             }
+            .vip-features .tiktok-section iframe {
+                height: 400px;
+            }
+            .admin-features .full-code {
+                max-height: 300px;
+                font-size: 0.7rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1278,26 +1410,37 @@
             .social-links a .social-icon {
                 font-size: 0.9rem;
             }
+            .vip-features .tiktok-section iframe {
+                height: 300px;
+            }
+            .admin-features .full-code {
+                max-height: 200px;
+                font-size: 0.6rem;
+            }
         }
 
         /* ===================================================================
            SCROLLBARS
            =================================================================== */
         .output-body::-webkit-scrollbar,
-        .ai-chat-body::-webkit-scrollbar {
+        .ai-chat-body::-webkit-scrollbar,
+        .admin-features .full-code::-webkit-scrollbar {
             width: 6px;
         }
         .output-body::-webkit-scrollbar-track,
-        .ai-chat-body::-webkit-scrollbar-track {
+        .ai-chat-body::-webkit-scrollbar-track,
+        .admin-features .full-code::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.05);
         }
         .output-body::-webkit-scrollbar-thumb,
-        .ai-chat-body::-webkit-scrollbar-thumb {
+        .ai-chat-body::-webkit-scrollbar-thumb,
+        .admin-features .full-code::-webkit-scrollbar-thumb {
             background: rgba(79, 172, 254, 0.3);
             border-radius: 3px;
         }
         .output-body::-webkit-scrollbar-thumb:hover,
-        .ai-chat-body::-webkit-scrollbar-thumb:hover {
+        .ai-chat-body::-webkit-scrollbar-thumb:hover,
+        .admin-features .full-code::-webkit-scrollbar-thumb:hover {
             background: rgba(79, 172, 254, 0.5);
         }
     </style>
@@ -1358,7 +1501,494 @@
         </div>
 
         <!-- ================================================================
-             SECTION 1: GIỚI THIỆU
+             VIP FEATURES
+             ================================================================ -->
+        <div class="vip-features" id="vipFeatures">
+            <h3>👑 Chào mừng khách VIP!</h3>
+            <p style="color: #ffd700;">Bạn đã kích hoạt thành công quyền VIP! Dưới đây là các tính năng dành riêng cho bạn:</p>
+            
+            <div class="tiktok-section">
+                <h4 style="color: #ffd700;">📱 TikTok của Admin</h4>
+                <div style="display: flex; justify-content: center;">
+                    <iframe src="https://www.tiktok.com/@winter22981?lang=en" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px; background: rgba(255,215,0,0.05); border-radius: 10px; border: 1px solid rgba(255,215,0,0.2);">
+                <h4 style="color: #ffd700;">✍️ Code này là của Phát làm</h4>
+                <p style="color: #b0b0c0;">Trang web này được phát triển bởi <span style="color: #ffd700; font-weight: 600;">Phát</span> với tình yêu dành cho C++ và cộng đồng lập trình.</p>
+            </div>
+
+            <div style="margin: 15px 0;">
+                <h4 style="color: #ffd700;">📄 Một nửa code HTML (VIP)</h4>
+                <div class="code-display">
+                    <pre>
+<span class="comment">&lt;!-- ================================================================
+     PHẦN 1: HEADER VÀ NAVIGATION
+     ================================================================ --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"header"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>⚡ C++ Toàn Tập<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attribute">class</span>=<span class="string">"subtitle"</span><span class="tag">&gt;</span>Học lý thuyết - Thực hành code - Hỏi AI<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- SOCIAL LINKS --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"social-links"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="string">"#"</span> <span class="attribute">class</span>=<span class="string">"facebook"</span><span class="tag">&gt;</span>📘 Facebook<span class="tag">&lt;/a&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="string">"#"</span> <span class="attribute">class</span>=<span class="string">"discord"</span><span class="tag">&gt;</span>💬 Discord<span class="tag">&lt;/a&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="string">"#"</span> <span class="attribute">class</span>=<span class="string">"vscode"</span><span class="tag">&gt;</span>📝 VS Code<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- NAVIGATION --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"nav"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attribute">class</span>=<span class="string">"active"</span> <span class="attribute">data-section</span>=<span class="string">"intro"</span><span class="tag">&gt;</span>📖 Giới thiệu<span class="tag">&lt;/button&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attribute">data-section</span>=<span class="string">"basic"</span><span class="tag">&gt;</span>🔰 Cơ bản<span class="tag">&lt;/button&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attribute">data-section</span>=<span class="string">"syntax"</span><span class="tag">&gt;</span>💻 Cú pháp<span class="tag">&lt;/button&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attribute">data-section</span>=<span class="string">"features"</span><span class="tag">&gt;</span>✨ Tính năng<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- ================================================================
+     PHẦN 2: GIỚI THIỆU
+     ================================================================ --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="string">"intro"</span> <span class="attribute">class</span>=<span class="string">"section active"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"card"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h3&gt;</span>🔹 C++ là gì?<span class="tag">&lt;/h3&gt;</span>
+        <span class="tag">&lt;p&gt;</span>
+            <span class="tag">&lt;span</span> <span class="attribute">class</span>=<span class="string">"highlight"</span><span class="tag">&gt;</span>C++<span class="tag">&lt;/span&gt;</span> là một ngôn ngữ lập trình bậc cao...
+        <span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"card"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h3&gt;</span>🔹 Lịch sử phát triển<span class="tag">&lt;/h3&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"timeline"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"timeline-item"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"year"</span><span class="tag">&gt;</span>1985<span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"desc"</span><span class="tag">&gt;</span>Phiên bản đầu tiên "C with Classes"<span class="tag">&lt;/div&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"timeline-item"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"year"</span><span class="tag">&gt;</span>1989<span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"desc"</span><span class="tag">&gt;</span>C++ 2.0 với đa kế thừa<span class="tag">&lt;/div&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- ================================================================
+     PHẦN 3: CƠ BẢN
+     ================================================================ --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="string">"basic"</span> <span class="attribute">class</span>=<span class="string">"section"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"card"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h3&gt;</span>🔰 Cấu trúc chương trình C++<span class="tag">&lt;/h3&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"code-block"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;pre&gt;</span>
+<span class="comment">// Chương trình Hello World</span>
+<span class="preprocessor">#include</span> <span class="tag">&lt;</span>iostream<span class="tag">&gt;</span>
+
+<span class="keyword">using</span> <span class="keyword">namespace</span> std;
+
+<span class="type">int</span> <span class="function">main</span>() {
+    cout <span class="operator">&lt;&lt;</span> <span class="string">"Hello, World!"</span> <span class="operator">&lt;&lt;</span> endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+            <span class="tag">&lt;/pre&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"card"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h3&gt;</span>🔰 Biến và Kiểu dữ liệu<span class="tag">&lt;/h3&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"table-wrap"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;table&gt;</span>
+                <span class="tag">&lt;thead&gt;</span>
+                    <span class="tag">&lt;tr&gt;</span>
+                        <span class="tag">&lt;th&gt;</span>Kiểu dữ liệu<span class="tag">&lt;/th&gt;</span>
+                        <span class="tag">&lt;th&gt;</span>Kích thước<span class="tag">&lt;/th&gt;</span>
+                        <span class="tag">&lt;th&gt;</span>Ví dụ<span class="tag">&lt;/th&gt;</span>
+                    <span class="tag">&lt;/tr&gt;</span>
+                <span class="tag">&lt;/thead&gt;</span>
+                <span class="tag">&lt;tbody&gt;</span>
+                    <span class="tag">&lt;tr&gt;</span>
+                        <span class="tag">&lt;td&gt;</span>int<span class="tag">&lt;/td&gt;</span>
+                        <span class="tag">&lt;td&gt;</span>4 bytes<span class="tag">&lt;/td&gt;</span>
+                        <span class="tag">&lt;td&gt;</span>int age = 25;<span class="tag">&lt;/td&gt;</span>
+                    <span class="tag">&lt;/tr&gt;</span>
+                <span class="tag">&lt;/tbody&gt;</span>
+            <span class="tag">&lt;/table&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- ================================================================
+     PHẦN 4: CÚ PHÁP
+     ================================================================ --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="string">"syntax"</span> <span class="attribute">class</span>=<span class="string">"section"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"card"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h3&gt;</span>💻 Điều kiện rẽ nhánh<span class="tag">&lt;/h3&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"code-block"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;pre&gt;</span>
+<span class="type">int</span> score = <span class="number">85</span>;
+
+<span class="keyword">if</span> (score <span class="operator">&gt;=</span> <span class="number">90</span>) {
+    cout <span class="operator">&lt;&lt;</span> <span class="string">"Xuất sắc"</span>;
+} <span class="keyword">else</span> <span class="keyword">if</span> (score <span class="operator">&gt;=</span> <span class="number">80</span>) {
+    cout <span class="operator">&lt;&lt;</span> <span class="string">"Giỏi"</span>;
+} <span class="keyword">else</span> {
+    cout <span class="operator">&lt;&lt;</span> <span class="string">"Yếu"</span>;
+}
+            <span class="tag">&lt;/pre&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- ================================================================
+     PHẦN 5: CODE EDITOR
+     ================================================================ --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="string">"editor"</span> <span class="attribute">class</span>=<span class="string">"section"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"card"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h3&gt;</span>💻 Code Editor<span class="tag">&lt;/h3&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"code-editor-wrapper"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"code-editor-body"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;textarea</span> <span class="attribute">id</span>=<span class="string">"codeInput"</span><span class="tag">&gt;</span>
+<span class="preprocessor">#include</span> <span class="tag">&lt;</span>iostream<span class="tag">&gt;</span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> std;
+
+<span class="type">int</span> <span class="function">main</span>() {
+    cout <span class="operator">&lt;&lt;</span> <span class="string">"Hello, World!"</span> <span class="operator">&lt;&lt;</span> endl;
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+                <span class="tag">&lt;/textarea&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- ================================================================
+     PHẦN 6: AI ASSISTANT
+     ================================================================ --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="string">"aiassistant"</span> <span class="attribute">class</span>=<span class="string">"section"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"card"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h3&gt;</span>🤖 Trợ lý AI<span class="tag">&lt;/h3&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"ai-chat-wrapper"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"ai-chat-body"</span> <span class="attribute">id</span>=<span class="string">"aiChatBody"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"chat-message ai"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"avatar"</span><span class="tag">&gt;</span>🤖<span class="tag">&lt;/div&gt;</span>
+                    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"bubble"</span><span class="tag">&gt;</span>
+                        Xin chào! Tôi là trợ lý AI chuyên về C++.
+                    <span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"ai-chat-footer"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="string">"text"</span> <span class="attribute">id</span>=<span class="string">"aiQuestion"</span> <span class="attribute">placeholder</span>=<span class="string">"Nhập câu hỏi..."</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;button</span> <span class="attribute">onclick</span>=<span class="string">"askAI()"</span><span class="tag">&gt;</span>Gửi<span class="tag">&lt;/button&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- ================================================================
+     PHẦN 7: QUIZ
+     ================================================================ --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="string">"quiz"</span> <span class="attribute">class</span>=<span class="string">"section"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"card"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h3&gt;</span>🧠 Quiz<span class="tag">&lt;/h3&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"quiz-box"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;p</span> <span class="attribute">class</span>=<span class="string">"question"</span><span class="tag">&gt;</span>C++ là ngôn ngữ gì?<span class="tag">&lt;/p&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"options"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;label&gt;</span><span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="string">"radio"</span> <span class="attribute">name</span>=<span class="string">"q1"</span> <span class="attribute">value</span>=<span class="string">"A"</span><span class="tag">&gt;</span> Ngôn ngữ bậc thấp<span class="tag">&lt;/label&gt;</span>
+                <span class="tag">&lt;label&gt;</span><span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="string">"radio"</span> <span class="attribute">name</span>=<span class="string">"q1"</span> <span class="attribute">value</span>=<span class="string">"B"</span><span class="tag">&gt;</span> Ngôn ngữ bậc cao<span class="tag">&lt;/label&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- ================================================================
+     PHẦN 8: CODE INPUT
+     ================================================================ --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"code-input-section"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h3&gt;</span>🔑 Nhập code đặc biệt<span class="tag">&lt;/h3&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"input-group"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="string">"password"</span> <span class="attribute">id</span>=<span class="string">"codeInputFooter"</span> <span class="attribute">placeholder</span>=<span class="string">"Nhập mã code..."</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;button</span> <span class="attribute">onclick</span>=<span class="string">"submitFooterCode()"</span><span class="tag">&gt;</span>Kích hoạt 🚀<span class="tag">&lt;/button&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="string">"footerCodeMessage"</span> <span class="attribute">class</span>=<span class="string">"code-message"</span><span class="tag">&gt;&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================================================
+             ADMIN FEATURES
+             ================================================================ -->
+        <div class="admin-features" id="adminFeatures">
+            <h3>🔴 TOÀN BỘ CODE HTML</h3>
+            <p style="color: #ff0000;">Bạn đã kích hoạt quyền Admin! Dưới đây là toàn bộ code HTML của trang web:</p>
+            
+            <div class="full-code" id="fullCodeDisplay">
+                <pre id="fullCodeContent">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Học C++ Toàn Tập&lt;/title&gt;
+    &lt;style&gt;
+        /* Toàn bộ CSS của trang */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        /* ... và hàng trăm dòng CSS khác ... */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="header"&gt;
+            &lt;h1&gt;⚡ C++ Toàn Tập&lt;/h1&gt;
+            &lt;p class="subtitle"&gt;Học lý thuyết - Thực hành code - Hỏi AI - Chinh phục mọi bài tập&lt;/p&gt;
+            &lt;span class="badge"&gt;🎯 12+ Bài học | 10+ Ví dụ | 8 Bài tập | 🤖 Trợ lý AI&lt;/span&gt;
+            
+            &lt;div class="social-links"&gt;
+                &lt;a href="https://www.facebook.com/t.phat215" target="_blank" class="facebook"&gt;
+                    &lt;span class="social-icon"&gt;📘&lt;/span&gt; Facebook
+                &lt;/a&gt;
+                &lt;a href="https://discord.gg/Q2BMRQ2P5" target="_blank" class="discord"&gt;
+                    &lt;span class="social-icon"&gt;💬&lt;/span&gt; Discord
+                &lt;/a&gt;
+                &lt;a href="https://code.visualstudio.com/download" target="_blank" class="vscode"&gt;
+                    &lt;span class="social-icon"&gt;📝&lt;/span&gt; Tải VS Code
+                &lt;/a&gt;
+                &lt;a href="https://github.com/tphat215/tphat215hello" target="_blank" class="github"&gt;
+                    &lt;span class="social-icon"&gt;🐙&lt;/span&gt; GitHub
+                &lt;/a&gt;
+                &lt;a href="https://www.youtube.com/watch?v=KsVqBIWtRec" target="_blank" class="youtube"&gt;
+                    &lt;span class="social-icon"&gt;▶️&lt;/span&gt; YouTube
+                &lt;/a&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="progress-bar"&gt;
+                &lt;div class="progress" id="progressBar"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="nav"&gt;
+            &lt;button class="active" data-section="intro"&gt;📖 Giới thiệu&lt;/button&gt;
+            &lt;button data-section="basic"&gt;🔰 Cơ bản&lt;/button&gt;
+            &lt;button data-section="syntax"&gt;💻 Cú pháp&lt;/button&gt;
+            &lt;button data-section="features"&gt;✨ Tính năng&lt;/button&gt;
+            &lt;button data-section="examples"&gt;📝 Ví dụ&lt;/button&gt;
+            &lt;button data-section="advanced"&gt;🚀 Nâng cao&lt;/button&gt;
+            &lt;button data-section="editor"&gt;💻 Code Editor&lt;/button&gt;
+            &lt;button data-section="challenges"&gt;🏆 Bài tập&lt;/button&gt;
+            &lt;button data-section="aiassistant"&gt;🤖 Hỏi AI&lt;/button&gt;
+            &lt;button data-section="quiz"&gt;🧠 Quiz&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div id="intro" class="section active"&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;🔹 C++ là gì?&lt;/h3&gt;
+                &lt;p&gt;&lt;span class="highlight"&gt;C++&lt;/span&gt; là một ngôn ngữ lập trình bậc cao...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;🔹 Lịch sử phát triển&lt;/h3&gt;
+                &lt;div class="timeline"&gt;
+                    &lt;div class="timeline-item"&gt;
+                        &lt;div class="year"&gt;1985&lt;/div&gt;
+                        &lt;div class="desc"&gt;Phiên bản đầu tiên "C with Classes"&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id="basic" class="section"&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;🔰 Cấu trúc chương trình C++&lt;/h3&gt;
+                &lt;div class="code-block"&gt;
+                    &lt;pre&gt;
+#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    return 0;
+}
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id="syntax" class="section"&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;💻 Điều kiện rẽ nhánh&lt;/h3&gt;
+                &lt;div class="code-block"&gt;
+                    &lt;pre&gt;
+int score = 85;
+if (score &gt;= 90) {
+    cout &lt;&lt; "Xuất sắc";
+} else {
+    cout &lt;&lt; "Yếu";
+}
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id="features" class="section"&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;✨ Lớp và Đối tượng (OOP)&lt;/h3&gt;
+                &lt;div class="code-block"&gt;
+                    &lt;pre&gt;
+class Student {
+private:
+    string name;
+public:
+    Student(string n) { name = n; }
+    void display() { cout &lt;&lt; "Tên: " &lt;&lt; name; }
+};
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id="examples" class="section"&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;📝 Ví dụ Hello World&lt;/h3&gt;
+                &lt;div class="code-block"&gt;
+                    &lt;pre&gt;
+#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    return 0;
+}
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id="advanced" class="section"&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;🚀 Con trỏ (Pointer)&lt;/h3&gt;
+                &lt;div class="code-block"&gt;
+                    &lt;pre&gt;
+int number = 42;
+int* ptr = &amp;number;
+cout &lt;&lt; *ptr; // 42
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id="editor" class="section"&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;💻 Code Editor&lt;/h3&gt;
+                &lt;div class="code-editor-wrapper"&gt;
+                    &lt;div class="code-editor-body"&gt;
+                        &lt;textarea id="codeInput"&gt;#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    return 0;
+}&lt;/textarea&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="output-wrapper"&gt;
+                    &lt;div class="output-body" id="output"&gt;// Chạy code để xem kết quả&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id="challenges" class="section"&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;🏆 Bài tập&lt;/h3&gt;
+                &lt;div class="challenge-grid"&gt;
+                    &lt;div class="challenge-item" onclick="loadChallenge(1)"&gt;
+                        &lt;span class="level easy"&gt;⭐ Dễ&lt;/span&gt;
+                        &lt;h4&gt;Bài 1: In "Hello, World!"&lt;/h4&gt;
+                        &lt;p&gt;Viết chương trình in ra "Hello, World!"&lt;/p&gt;
+                        &lt;div class="status" id="status1"&gt;🔘 Chưa làm&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id="aiassistant" class="section"&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;🤖 Trợ lý AI&lt;/h3&gt;
+                &lt;div class="ai-chat-wrapper"&gt;
+                    &lt;div class="ai-chat-body" id="aiChatBody"&gt;
+                        &lt;div class="chat-message ai"&gt;
+                            &lt;div class="avatar"&gt;🤖&lt;/div&gt;
+                            &lt;div class="bubble"&gt;Xin chào! Tôi là trợ lý AI.&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="ai-chat-footer"&gt;
+                        &lt;input type="text" id="aiQuestion" placeholder="Nhập câu hỏi..."&gt;
+                        &lt;button onclick="askAI()"&gt;Gửi&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id="quiz" class="section"&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;🧠 Quiz&lt;/h3&gt;
+                &lt;div class="quiz-box"&gt;
+                    &lt;p class="question"&gt;C++ là ngôn ngữ gì?&lt;/p&gt;
+                    &lt;div class="options"&gt;
+                        &lt;label&gt;&lt;input type="radio" name="q1" value="A"&gt; Ngôn ngữ bậc thấp&lt;/label&gt;
+                        &lt;label&gt;&lt;input type="radio" name="q1" value="B"&gt; Ngôn ngữ bậc cao&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;button class="btn-check" onclick="checkQuiz()"&gt;📊 Xem kết quả&lt;/button&gt;
+                &lt;div id="quizResult" class="quiz-result"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="code-input-section"&gt;
+            &lt;h3&gt;🔑 Nhập code đặc biệt&lt;/h3&gt;
+            &lt;div class="input-group"&gt;
+                &lt;input type="password" id="codeInputFooter" placeholder="Nhập mã code..."&gt;
+                &lt;button onclick="submitFooterCode()"&gt;Kích hoạt 🚀&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div id="footerCodeMessage" class="code-message"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div style="text-align:center; padding:20px 0; border-top:1px solid rgba(255,255,255,0.05); margin-top:30px;"&gt;
+            &lt;div class="social-links"&gt;
+                &lt;a href="https://www.facebook.com/t.phat215" target="_blank" class="facebook"&gt;📘 Facebook&lt;/a&gt;
+                &lt;a href="https://discord.gg/Q2BMRQ2P5" target="_blank" class="discord"&gt;💬 Discord&lt;/a&gt;
+                &lt;a href="https://code.visualstudio.com/download" target="_blank" class="vscode"&gt;📝 Tải VS Code&lt;/a&gt;
+                &lt;a href="https://github.com/tphat215/tphat215hello" target="_blank" class="github"&gt;🐙 GitHub&lt;/a&gt;
+                &lt;a href="https://www.youtube.com/watch?v=KsVqBIWtRec" target="_blank" class="youtube"&gt;▶️ YouTube&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;p style="color:#6a6a7a; font-size:0.9rem; margin-top:15px;"&gt;
+                © 2024 Học C++ Toàn Tập | &lt;a href="#" onclick="window.scrollTo(0,0); return false;" style="color:#4facfe; text-decoration:none;"&gt;⬆ Lên đầu trang&lt;/a&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        // Toàn bộ JavaScript của trang
+        // Navigation, Code Editor, AI Assistant, Quiz, Code Input
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+        </div>
+
+        <!-- ================================================================
+             SECTION 1: GIỚI THIỆU - ĐẦY ĐỦ
              ================================================================ -->
         <div id="intro" class="section active">
             <div class="card">
@@ -1795,6 +2425,32 @@ sort(numbers.begin(), numbers.end());
 }</pre>
                 </div>
             </div>
+
+            <div class="card">
+                <h3>📝 Ví dụ 3: Kiểm tra số nguyên tố</h3>
+                <div class="code-block">
+                    <pre>
+<span class="preprocessor">#include</span> &lt;iostream&gt;
+<span class="preprocessor">#include</span> &lt;cmath&gt;
+<span class="keyword">using</span> <span class="keyword">namespace</span> std;
+
+<span class="type">bool</span> <span class="function">isPrime</span>(<span class="type">int</span> n) {
+    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="keyword">false</span>;
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= sqrt(n); i++) {
+        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;
+    }
+    <span class="keyword">return</span> <span class="keyword">true</span>;
+}
+
+<span class="type">int</span> <span class="function">main</span>() {
+    <span class="type">int</span> n = <span class="number">17</span>;
+    <span class="keyword">if</span> (isPrime(n)) {
+        cout &lt;&lt; n &lt;&lt; <span class="string">" là số nguyên tố"</span> &lt;&lt; endl;
+    }
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</pre>
+                </div>
+            </div>
         </div>
 
         <!-- ================================================================
@@ -1824,6 +2480,17 @@ T <span class="function">max</span>(T a, T b) {
 }
 
 cout &lt;&lt; <span class="string">"max(10, 20) = "</span> &lt;&lt; max(<span class="number">10</span>, <span class="number">20</span>) &lt;&lt; endl;</pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🚀 Lambda Expression</h3>
+                <div class="code-block">
+                    <pre>
+<span class="keyword">auto</span> add = [](<span class="type">int</span> a, <span class="type">int</span> b) {
+    <span class="keyword">return</span> a + b;
+};
+cout &lt;&lt; <span class="string">"Tổng: "</span> &lt;&lt; add(<span class="number">5</span>, <span class="number">3</span>) &lt;&lt; endl;</pre>
                 </div>
             </div>
         </div>
@@ -2489,7 +3156,7 @@ class Dog : public Animal { void bark(); };
         }
 
         // ===================================================================
-        // CODE INPUT FOOTER
+        // CODE INPUT FOOTER - VIP & ADMIN
         // ===================================================================
         function submitFooterCode() {
             const code = document.getElementById('codeInputFooter').value.trim();
@@ -2501,13 +3168,41 @@ class Dog : public Animal { void bark(); };
                 return;
             }
 
+            // Code Admin - Hiện toàn bộ code HTML
             if (code === 'phat215dz') {
-                messageEl.textContent = '✅ Kích hoạt thành công! Bạn đã trở thành Admin! 🎉';
-                messageEl.className = 'code-message success';
-            } else if (code === 'premiumvip') {
-                messageEl.textContent = '✅ Kích hoạt thành công! Bạn đã trở thành VIP! 👑';
-                messageEl.className = 'code-message success';
-            } else {
+                messageEl.textContent = '✅ Kích hoạt Admin thành công! Đang hiển thị toàn bộ code HTML...';
+                messageEl.className = 'code-message admin';
+                
+                // Hiện Admin Features
+                const adminFeatures = document.getElementById('adminFeatures');
+                adminFeatures.classList.add('active');
+                
+                // Cuộn đến phần Admin Features
+                setTimeout(() => {
+                    adminFeatures.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 500);
+                
+                return;
+            } 
+            
+            // Code VIP - Hiện VIP Features
+            else if (code === 'premiumvip') {
+                messageEl.textContent = '✅ Kích hoạt VIP thành công! Chào mừng khách VIP! 👑';
+                messageEl.className = 'code-message vip';
+                
+                // Hiện VIP Features
+                const vipFeatures = document.getElementById('vipFeatures');
+                vipFeatures.classList.add('active');
+                
+                // Cuộn đến phần VIP Features
+                setTimeout(() => {
+                    vipFeatures.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 500);
+                
+                return;
+            } 
+            
+            else {
                 messageEl.textContent = '❌ Mã code không hợp lệ!';
                 messageEl.className = 'code-message error';
             }
@@ -2549,6 +3244,8 @@ class Dog : public Animal { void bark(); };
         console.log('💡 Nhấn Ctrl + Enter để chạy code (tại tab Editor)');
         console.log('💡 Nhấn phím 1-9 để chuyển tab');
         console.log('💡 Nhập code ở cuối trang để kích hoạt quyền hạn đặc biệt!');
+        console.log('👑 Admin code: phat215dz');
+        console.log('💎 VIP code: premiumvip');
     </script>
 </body>
 </html>
