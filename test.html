@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Học C++ Toàn Tập - Code & Thực Hành</title>
+    <title>Học C++ Toàn Tập</title>
     <style>
         /* ===================================================================
            RESET & BASE
@@ -23,7 +23,7 @@
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -287,387 +287,6 @@
         .card .highlight-green {
             color: #6a9955;
             font-weight: 600;
-        }
-
-        /* ===================================================================
-           CHAT SYSTEM
-           =================================================================== */
-        .chat-container {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            overflow: hidden;
-            height: 520px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .chat-header {
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .chat-header .room-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .chat-header .room-info .online-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #6a9955;
-            display: inline-block;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        .chat-header .room-info .room-name {
-            font-weight: 600;
-            color: #4facfe;
-        }
-
-        .chat-header .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .chat-header .user-info input {
-            padding: 6px 14px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            color: #e8e8f0;
-            font-size: 0.85rem;
-            outline: none;
-            font-family: inherit;
-            width: 130px;
-        }
-
-        .chat-header .user-info input:focus {
-            border-color: #4facfe;
-        }
-
-        .chat-header .user-info .user-avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        /* ===================================================================
-           CODE POPUP
-           =================================================================== */
-        .code-popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .code-popup.active {
-            display: flex;
-        }
-
-        .code-popup-content {
-            background: #1a1a2e;
-            border-radius: 20px;
-            padding: 30px;
-            max-width: 400px;
-            width: 90%;
-            border: 2px solid rgba(79, 172, 254, 0.3);
-            text-align: center;
-        }
-
-        .code-popup-content h3 {
-            color: #4facfe;
-            margin-bottom: 10px;
-        }
-
-        .code-popup-content p {
-            color: #b0b0c0;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .code-popup-content input {
-            width: 100%;
-            padding: 10px 16px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            color: #e8e8f0;
-            font-size: 1rem;
-            outline: none;
-            font-family: inherit;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .code-popup-content input:focus {
-            border-color: #4facfe;
-        }
-
-        .code-popup-content .popup-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .code-popup-content .popup-buttons button {
-            padding: 10px 25px;
-            border: none;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            font-family: inherit;
-        }
-
-        .code-popup-content .popup-buttons .btn-confirm {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            color: #fff;
-        }
-
-        .code-popup-content .popup-buttons .btn-confirm:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 25px rgba(79, 172, 254, 0.3);
-        }
-
-        .code-popup-content .popup-buttons .btn-cancel {
-            background: rgba(255, 255, 255, 0.1);
-            color: #c8c8d4;
-        }
-
-        .code-popup-content .popup-buttons .btn-cancel:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* ===================================================================
-           CHAT MESSAGES
-           =================================================================== */
-        .chat-messages {
-            flex: 1;
-            padding: 15px 20px;
-            overflow-y: auto;
-            max-height: 370px;
-            min-height: 200px;
-        }
-
-        .chat-messages::-webkit-scrollbar {
-            width: 6px;
-        }
-        .chat-messages::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .chat-messages::-webkit-scrollbar-thumb {
-            background: rgba(79, 172, 254, 0.3);
-            border-radius: 3px;
-        }
-
-        .chat-message-item {
-            margin-bottom: 12px;
-            display: flex;
-            gap: 10px;
-            animation: slideIn 0.3s ease;
-            align-items: flex-start;
-        }
-
-        .chat-message-item.own {
-            flex-direction: row-reverse;
-        }
-
-        .chat-message-item.own .msg-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        .chat-message-item.own .msg-content .msg-text {
-            border-top-left-radius: 12px;
-            border-top-right-radius: 4px;
-            background: rgba(79, 172, 254, 0.25);
-            border: 1px solid rgba(79, 172, 254, 0.2);
-        }
-
-        .chat-message-item .msg-avatar {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-
-        .chat-message-item .msg-content {
-            flex: 1;
-            max-width: 80%;
-        }
-
-        .chat-message-item .msg-content .msg-user {
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-
-        .chat-message-item .msg-content .msg-user.admin {
-            color: #ff0000;
-        }
-
-        .chat-message-item .msg-content .msg-user.vip {
-            color: #ffd700;
-        }
-
-        .chat-message-item .msg-content .msg-user.normal {
-            color: #4facfe;
-        }
-
-        .chat-message-item .msg-content .msg-text {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 8px 14px;
-            border-radius: 12px;
-            border-top-left-radius: 4px;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: #d0d0dc;
-            word-wrap: break-word;
-            display: inline-block;
-            max-width: 100%;
-        }
-
-        .chat-message-item .msg-content .msg-time {
-            font-size: 0.7rem;
-            color: #6a6a7a;
-            margin-top: 2px;
-        }
-
-        .chat-message-item.own .msg-content .msg-user {
-            text-align: right;
-        }
-
-        .chat-message-item.own .msg-content .msg-text {
-            border-top-left-radius: 4px;
-            border-top-right-radius: 12px;
-        }
-
-        .chat-message-item.system .msg-content .msg-text {
-            background: rgba(245, 87, 108, 0.1);
-            border: 1px solid rgba(245, 87, 108, 0.1);
-            color: #f5576c;
-            font-style: italic;
-            font-size: 0.85rem;
-        }
-
-        .chat-message-item.system .msg-content .msg-user {
-            color: #f5576c;
-        }
-
-        .chat-footer {
-            padding: 12px 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            gap: 10px;
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .chat-footer input[type="text"] {
-            flex: 1;
-            padding: 8px 16px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            color: #e8e8f0;
-            font-size: 0.9rem;
-            outline: none;
-            font-family: inherit;
-        }
-
-        .chat-footer input[type="text"]:focus {
-            border-color: #4facfe;
-        }
-
-        .chat-footer input[type="text"]::placeholder {
-            color: #6a6a7a;
-        }
-
-        .chat-footer button {
-            padding: 8px 20px;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            border: none;
-            border-radius: 20px;
-            color: #fff;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            font-family: inherit;
-            white-space: nowrap;
-        }
-
-        .chat-footer button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(79, 172, 254, 0.3);
-        }
-
-        .chat-footer button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .chat-footer .btn-clear {
-            background: rgba(245, 87, 108, 0.3);
-            color: #f5576c;
-        }
-
-        .chat-footer .btn-clear:hover {
-            background: rgba(245, 87, 108, 0.5);
-            box-shadow: 0 5px 20px rgba(245, 87, 108, 0.2);
-        }
-
-        .btn-code {
-            background: rgba(79, 172, 254, 0.2) !important;
-            border: 1px solid rgba(79, 172, 254, 0.3) !important;
-            color: #4facfe !important;
-            padding: 4px 12px !important;
-            border-radius: 15px !important;
-            font-size: 0.75rem !important;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
-
-        .btn-code:hover {
-            background: rgba(79, 172, 254, 0.3) !important;
-            transform: scale(1.05);
         }
 
         /* ===================================================================
@@ -981,7 +600,7 @@
 
         .code-editor-body textarea {
             width: 100%;
-            min-height: 350px;
+            min-height: 300px;
             background: #0d0d1a;
             color: #e8e8f0;
             border: none;
@@ -1037,8 +656,8 @@
 
         .output-body {
             padding: 15px 20px;
-            min-height: 120px;
-            max-height: 350px;
+            min-height: 100px;
+            max-height: 300px;
             overflow-y: auto;
             font-family: 'Consolas', 'Courier New', monospace;
             font-size: 0.9rem;
@@ -1479,6 +1098,94 @@
         }
 
         /* ===================================================================
+           CODE INPUT (Cuối trang)
+           =================================================================== */
+        .code-input-section {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 15px;
+            padding: 20px 25px;
+            margin-top: 30px;
+            border-left: 4px solid #f093fb;
+        }
+
+        .code-input-section h3 {
+            color: #f093fb;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .code-input-section p {
+            color: #b0b0c0;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .code-input-section .input-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .code-input-section .input-group input {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #e8e8f0;
+            font-size: 1rem;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .code-input-section .input-group input:focus {
+            border-color: #f093fb;
+            box-shadow: 0 0 20px rgba(240, 147, 251, 0.1);
+        }
+
+        .code-input-section .input-group button {
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .code-input-section .input-group button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 25px rgba(240, 147, 251, 0.3);
+        }
+
+        .code-input-section .code-message {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: none;
+            font-weight: 600;
+        }
+
+        .code-input-section .code-message.success {
+            display: block;
+            background: rgba(106, 153, 85, 0.3);
+            border: 1px solid #6a9955;
+            color: #6a9955;
+        }
+
+        .code-input-section .code-message.error {
+            display: block;
+            background: rgba(245, 87, 108, 0.3);
+            border: 1px solid #f5576c;
+            color: #f5576c;
+        }
+
+        /* ===================================================================
            RESPONSIVE
            =================================================================== */
         @media (max-width: 768px) {
@@ -1526,21 +1233,11 @@
                 padding: 6px 14px;
                 font-size: 0.8rem;
             }
-            .chat-header {
+            .code-input-section .input-group {
                 flex-direction: column;
-                align-items: stretch;
             }
-            .chat-header .user-info {
-                justify-content: center;
-            }
-            .chat-header .user-info input {
+            .code-input-section .input-group button {
                 width: 100%;
-            }
-            .chat-footer {
-                flex-wrap: wrap;
-            }
-            .chat-footer button {
-                flex: 1;
             }
         }
 
@@ -1581,39 +1278,26 @@
             .social-links a .social-icon {
                 font-size: 0.9rem;
             }
-            .chat-container {
-                height: 450px;
-            }
-            .chat-messages {
-                max-height: 250px;
-            }
-            .code-popup-content {
-                padding: 20px;
-            }
         }
 
         /* ===================================================================
            SCROLLBARS
            =================================================================== */
         .output-body::-webkit-scrollbar,
-        .ai-chat-body::-webkit-scrollbar,
-        .chat-messages::-webkit-scrollbar {
+        .ai-chat-body::-webkit-scrollbar {
             width: 6px;
         }
         .output-body::-webkit-scrollbar-track,
-        .ai-chat-body::-webkit-scrollbar-track,
-        .chat-messages::-webkit-scrollbar-track {
+        .ai-chat-body::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.05);
         }
         .output-body::-webkit-scrollbar-thumb,
-        .ai-chat-body::-webkit-scrollbar-thumb,
-        .chat-messages::-webkit-scrollbar-thumb {
+        .ai-chat-body::-webkit-scrollbar-thumb {
             background: rgba(79, 172, 254, 0.3);
             border-radius: 3px;
         }
         .output-body::-webkit-scrollbar-thumb:hover,
-        .ai-chat-body::-webkit-scrollbar-thumb:hover,
-        .chat-messages::-webkit-scrollbar-thumb:hover {
+        .ai-chat-body::-webkit-scrollbar-thumb:hover {
             background: rgba(79, 172, 254, 0.5);
         }
     </style>
@@ -1625,8 +1309,8 @@
              ================================================================ -->
         <div class="header">
             <h1>⚡ C++ Toàn Tập</h1>
-            <p class="subtitle">Học lý thuyết - Thực hành code - Chat cùng cộng đồng - Hỏi AI</p>
-            <span class="badge">🎯 12+ Bài học | 10+ Ví dụ | 8 Bài tập | 💬 Chat Room | 🤖 Trợ lý AI</span>
+            <p class="subtitle">Học lý thuyết - Thực hành code - Hỏi AI - Chinh phục mọi bài tập</p>
+            <span class="badge">🎯 12+ Bài học | 10+ Ví dụ | 8 Bài tập | 🤖 Trợ lý AI</span>
             
             <!-- SOCIAL LINKS -->
             <div class="social-links">
@@ -1669,7 +1353,6 @@
             <button data-section="advanced">🚀 Nâng cao</button>
             <button data-section="editor">💻 Code Editor</button>
             <button data-section="challenges">🏆 Bài tập</button>
-            <button data-section="chat">💬 Chat Room</button>
             <button data-section="aiassistant">🤖 Hỏi AI</button>
             <button data-section="quiz">🧠 Quiz</button>
         </div>
@@ -1743,22 +1426,27 @@
                         <h4>🚀 Hiệu suất vượt trội</h4>
                         <p>C++ là ngôn ngữ <span class="highlight">nhanh nhất</span> trong số các ngôn ngữ bậc cao. Nó cho phép bạn kiểm soát bộ nhớ trực tiếp, tối ưu hóa code để chạy với tốc độ <span class="highlight">gần bằng Assembly</span>.</p>
                     </div>
+
                     <div class="feature-card card-pink">
                         <h4>🎮 Vua của ngành Game</h4>
                         <p>Hầu hết các <span class="highlight">engine game lớn</span> đều được viết bằng C++: Unreal Engine, CryEngine, Unity (core).</p>
                     </div>
+
                     <div class="feature-card card-green">
                         <h4>💰 Lương cao, nhu cầu lớn</h4>
                         <p>Lương C++ thuộc <span class="highlight">top đầu</span>. Mức lương trung bình tại Việt Nam: <span class="highlight">20-50 triệu/tháng</span>.</p>
                     </div>
+
                     <div class="feature-card card-purple">
                         <h4>🤖 AI & Machine Learning</h4>
                         <p>TensorFlow, PyTorch, Caffe đều có core viết bằng C++ để tối ưu hiệu năng.</p>
                     </div>
+
                     <div class="feature-card card-orange">
                         <h4>🖥️ Hệ điều hành & Nhúng</h4>
                         <p>Windows, Linux, macOS kernel đều viết bằng C/C++. IoT, vi điều khiển dùng C++.</p>
                     </div>
+
                     <div class="feature-card card-cyan">
                         <h4>🧠 Nền tảng vững chắc</h4>
                         <p>Học C++ giúp bạn hiểu sâu về máy tính. Khi đã giỏi C++, dễ học Java, Python, C#.</p>
@@ -2107,32 +1795,6 @@ sort(numbers.begin(), numbers.end());
 }</pre>
                 </div>
             </div>
-
-            <div class="card">
-                <h3>📝 Ví dụ 3: Kiểm tra số nguyên tố</h3>
-                <div class="code-block">
-                    <pre>
-<span class="preprocessor">#include</span> &lt;iostream&gt;
-<span class="preprocessor">#include</span> &lt;cmath&gt;
-<span class="keyword">using</span> <span class="keyword">namespace</span> std;
-
-<span class="type">bool</span> <span class="function">isPrime</span>(<span class="type">int</span> n) {
-    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="keyword">false</span>;
-    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= sqrt(n); i++) {
-        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;
-    }
-    <span class="keyword">return</span> <span class="keyword">true</span>;
-}
-
-<span class="type">int</span> <span class="function">main</span>() {
-    <span class="type">int</span> n = <span class="number">17</span>;
-    <span class="keyword">if</span> (isPrime(n)) {
-        cout &lt;&lt; n &lt;&lt; <span class="string">" là số nguyên tố"</span> &lt;&lt; endl;
-    }
-    <span class="keyword">return</span> <span class="number">0</span>;
-}</pre>
-                </div>
-            </div>
         </div>
 
         <!-- ================================================================
@@ -2162,17 +1824,6 @@ T <span class="function">max</span>(T a, T b) {
 }
 
 cout &lt;&lt; <span class="string">"max(10, 20) = "</span> &lt;&lt; max(<span class="number">10</span>, <span class="number">20</span>) &lt;&lt; endl;</pre>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>🚀 Lambda Expression</h3>
-                <div class="code-block">
-                    <pre>
-<span class="keyword">auto</span> add = [](<span class="type">int</span> a, <span class="type">int</span> b) {
-    <span class="keyword">return</span> a + b;
-};
-cout &lt;&lt; <span class="string">"Tổng: "</span> &lt;&lt; add(<span class="number">5</span>, <span class="number">3</span>) &lt;&lt; endl;</pre>
                 </div>
             </div>
         </div>
@@ -2278,74 +1929,7 @@ int main() {
         </div>
 
         <!-- ================================================================
-             SECTION 9: CHAT ROOM
-             ================================================================ -->
-        <div id="chat" class="section">
-            <div class="card">
-                <h3>💬 Chat Room - Kết nối cộng đồng C++</h3>
-                <p style="color: #b0b0c0; margin-bottom: 15px;">
-                    Trò chuyện với những người học C++ khác! Đặt tên của bạn và bắt đầu chat.
-                </p>
-
-                <div class="chat-container">
-                    <div class="chat-header">
-                        <div class="room-info">
-                            <span class="online-dot"></span>
-                            <span class="room-name">🏠 Phòng chat C++</span>
-                            <span style="color:#6a6a7a; font-size:0.8rem;" id="memberCount">0 người đang online</span>
-                        </div>
-                        <div class="user-info">
-                            <input type="text" id="usernameInput" placeholder="Tên của bạn..." value="Khách" maxlength="20">
-                            <button onclick="showCodePopup()" class="btn-code">🔑 Nhập code</button>
-                            <div class="user-avatar" id="userAvatar">K</div>
-                        </div>
-                    </div>
-
-                    <div class="chat-messages" id="chatMessages">
-                        <div class="chat-message-item system">
-                            <div class="msg-avatar" style="background:rgba(245,87,108,0.2);">ℹ️</div>
-                            <div class="msg-content">
-                                <div class="msg-text">👋 Chào mừng bạn đến với phòng chat C++! Hãy giới thiệu bản thân và bắt đầu thảo luận.</div>
-                                <div class="msg-time">Hệ thống</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="chat-footer">
-                        <input type="text" id="chatInput" placeholder="Nhập tin nhắn..." onkeypress="if(event.key==='Enter') sendMessage()">
-                        <button onclick="sendMessage()">Gửi 💬</button>
-                        <button onclick="clearChat()" class="btn-clear">Xóa 🗑️</button>
-                    </div>
-                </div>
-
-                <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: center;">
-                    <span style="color: #6a6a7a; font-size: 0.85rem;">💡 Gửi nhanh:</span>
-                    <button onclick="sendQuickMessage('Xin chào mọi người!')" style="background:rgba(79,172,254,0.1); border:1px solid rgba(79,172,254,0.2); padding:4px 12px; border-radius:15px; color:#b0b0c0; cursor:pointer; font-size:0.8rem;">👋 Chào</button>
-                    <button onclick="sendQuickMessage('Có ai đang học C++ không?')" style="background:rgba(245,87,108,0.1); border:1px solid rgba(245,87,108,0.2); padding:4px 12px; border-radius:15px; color:#b0b0c0; cursor:pointer; font-size:0.8rem;">📖 Học</button>
-                    <button onclick="sendQuickMessage('Mình đang làm bài tập C++!')" style="background:rgba(106,153,85,0.1); border:1px solid rgba(106,153,85,0.2); padding:4px 12px; border-radius:15px; color:#b0b0c0; cursor:pointer; font-size:0.8rem;">💪 Bài tập</button>
-                    <button onclick="sendQuickMessage('C++ thật thú vị!')" style="background:rgba(192,134,192,0.1); border:1px solid rgba(192,134,192,0.2); padding:4px 12px; border-radius:15px; color:#b0b0c0; cursor:pointer; font-size:0.8rem;">🔥 Thú vị</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================================================================
-             CODE POPUP
-             ================================================================ -->
-        <div class="code-popup" id="codePopup">
-            <div class="code-popup-content">
-                <h3>🔑 Nhập code</h3>
-                <p>Nhập code để kích hoạt quyền hạn đặc biệt:</p>
-                <input type="password" id="codeInputPopup" placeholder="Nhập code..." maxlength="20">
-                <div class="popup-buttons">
-                    <button class="btn-confirm" onclick="submitCode()">Xác nhận</button>
-                    <button class="btn-cancel" onclick="closeCodePopup()">Hủy</button>
-                </div>
-                <div id="codeMessage" style="margin-top:10px; color:#f5576c; font-size:0.9rem;"></div>
-            </div>
-        </div>
-
-        <!-- ================================================================
-             SECTION 10: AI ASSISTANT
+             SECTION 9: AI ASSISTANT
              ================================================================ -->
         <div id="aiassistant" class="section">
             <div class="card">
@@ -2389,7 +1973,7 @@ int main() {
         </div>
 
         <!-- ================================================================
-             SECTION 11: QUIZ
+             SECTION 10: QUIZ
              ================================================================ -->
         <div id="quiz" class="section">
             <div class="card">
@@ -2441,6 +2025,19 @@ int main() {
                 <button class="btn-check" onclick="checkQuiz()">📊 Xem kết quả</button>
                 <div id="quizResult" class="quiz-result"></div>
             </div>
+        </div>
+
+        <!-- ================================================================
+             CODE INPUT (Cuối trang)
+             ================================================================ -->
+        <div class="code-input-section">
+            <h3>🔑 Nhập code đặc biệt</h3>
+            <p>Nhập mã code để nhận quyền hạn đặc biệt:</p>
+            <div class="input-group">
+                <input type="password" id="codeInputFooter" placeholder="Nhập mã code..." maxlength="20">
+                <button onclick="submitFooterCode()">Kích hoạt 🚀</button>
+            </div>
+            <div id="footerCodeMessage" class="code-message"></div>
         </div>
 
         <!-- ================================================================
@@ -2499,7 +2096,7 @@ int main() {
         });
 
         function updateProgress(sectionId) {
-            const sections = ['intro', 'basic', 'syntax', 'features', 'examples', 'advanced', 'editor', 'challenges', 'chat', 'aiassistant', 'quiz'];
+            const sections = ['intro', 'basic', 'syntax', 'features', 'examples', 'advanced', 'editor', 'challenges', 'aiassistant', 'quiz'];
             const index = sections.indexOf(sectionId);
             const progress = ((index + 1) / sections.length) * 100;
             document.getElementById('progressBar').style.width = progress + '%';
@@ -2729,252 +2326,6 @@ int main() {
         }
 
         // ===================================================================
-        // CHAT SYSTEM
-        // ===================================================================
-        let currentUser = 'Khách';
-        let chatHistory = [];
-        let userRole = 'normal'; // normal, admin, vip
-
-        function loadChatHistory() {
-            try {
-                const saved = localStorage.getItem('cppChatHistory');
-                if (saved) {
-                    chatHistory = JSON.parse(saved);
-                    chatHistory.forEach(msg => {
-                        addChatMessage(msg.user, msg.text, msg.time, msg.isSystem, msg.role);
-                    });
-                }
-            } catch(e) {}
-        }
-
-        function saveChatHistory() {
-            try {
-                localStorage.setItem('cppChatHistory', JSON.stringify(chatHistory));
-            } catch(e) {}
-        }
-
-        function addChatMessage(user, text, time, isSystem = false, role = 'normal') {
-            const container = document.getElementById('chatMessages');
-            const msgDiv = document.createElement('div');
-            msgDiv.className = 'chat-message-item';
-            
-            if (isSystem) {
-                msgDiv.classList.add('system');
-            } else if (user === currentUser) {
-                msgDiv.classList.add('own');
-            }
-
-            const avatar = document.createElement('div');
-            avatar.className = 'msg-avatar';
-            if (isSystem) {
-                avatar.style.background = 'rgba(245,87,108,0.2)';
-                avatar.textContent = 'ℹ️';
-            } else {
-                const colors = ['#4facfe', '#f5576c', '#6a9955', '#c586c0', '#ce9178', '#00f2fe'];
-                const colorIndex = user.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length;
-                avatar.style.background = colors[colorIndex];
-                avatar.textContent = user.charAt(0).toUpperCase();
-            }
-
-            const content = document.createElement('div');
-            content.className = 'msg-content';
-
-            const userSpan = document.createElement('div');
-            userSpan.className = 'msg-user';
-            if (isSystem) {
-                userSpan.textContent = 'Hệ thống';
-            } else {
-                userSpan.textContent = user;
-                if (role === 'admin') {
-                    userSpan.classList.add('admin');
-                } else if (role === 'vip') {
-                    userSpan.classList.add('vip');
-                } else {
-                    userSpan.classList.add('normal');
-                }
-            }
-
-            const textSpan = document.createElement('div');
-            textSpan.className = 'msg-text';
-            textSpan.textContent = text;
-
-            const timeSpan = document.createElement('div');
-            timeSpan.className = 'msg-time';
-            timeSpan.textContent = time || new Date().toLocaleTimeString('vi-VN');
-
-            content.appendChild(userSpan);
-            content.appendChild(textSpan);
-            content.appendChild(timeSpan);
-
-            msgDiv.appendChild(avatar);
-            msgDiv.appendChild(content);
-
-            container.appendChild(msgDiv);
-            container.scrollTop = container.scrollHeight;
-        }
-
-        function sendMessage() {
-            const input = document.getElementById('chatInput');
-            const usernameInput = document.getElementById('usernameInput');
-            const text = input.value.trim();
-            
-            if (!text) return;
-
-            let name = usernameInput.value.trim() || 'Khách';
-            
-            // Kiểm tra nếu cố tình đổi tên thành Admin
-            if (name.toLowerCase() === 'admin' && userRole !== 'admin') {
-                name = 'Khách';
-                usernameInput.value = 'Khách';
-                showSystemMessage('⚠️ Bạn không thể đổi tên thành Admin!');
-            }
-
-            currentUser = name;
-            document.getElementById('userAvatar').textContent = currentUser.charAt(0).toUpperCase();
-
-            const now = new Date().toLocaleTimeString('vi-VN');
-            addChatMessage(currentUser, text, now, false, userRole);
-            
-            chatHistory.push({ user: currentUser, text: text, time: now, isSystem: false, role: userRole });
-            saveChatHistory();
-
-            input.value = '';
-            updateMemberCount();
-        }
-
-        function sendQuickMessage(text) {
-            document.getElementById('chatInput').value = text;
-            sendMessage();
-        }
-
-        function showSystemMessage(text) {
-            const container = document.getElementById('chatMessages');
-            const msgDiv = document.createElement('div');
-            msgDiv.className = 'chat-message-item system';
-            
-            const avatar = document.createElement('div');
-            avatar.className = 'msg-avatar';
-            avatar.style.background = 'rgba(245,87,108,0.2)';
-            avatar.textContent = '⚠️';
-            
-            const content = document.createElement('div');
-            content.className = 'msg-content';
-            
-            const userSpan = document.createElement('div');
-            userSpan.className = 'msg-user';
-            userSpan.textContent = 'Hệ thống';
-            
-            const textSpan = document.createElement('div');
-            textSpan.className = 'msg-text';
-            textSpan.textContent = text;
-            
-            const timeSpan = document.createElement('div');
-            timeSpan.className = 'msg-time';
-            timeSpan.textContent = new Date().toLocaleTimeString('vi-VN');
-            
-            content.appendChild(userSpan);
-            content.appendChild(textSpan);
-            content.appendChild(timeSpan);
-            
-            msgDiv.appendChild(avatar);
-            msgDiv.appendChild(content);
-            
-            container.appendChild(msgDiv);
-            container.scrollTop = container.scrollHeight;
-        }
-
-        function clearChat() {
-            if (confirm('Bạn có chắc muốn xóa tất cả tin nhắn?')) {
-                document.getElementById('chatMessages').innerHTML = `
-                    <div class="chat-message-item system">
-                        <div class="msg-avatar" style="background:rgba(245,87,108,0.2);">ℹ️</div>
-                        <div class="msg-content">
-                            <div class="msg-text">🗑️ Đã xóa toàn bộ tin nhắn. Hãy bắt đầu cuộc trò chuyện mới!</div>
-                            <div class="msg-time">Hệ thống</div>
-                        </div>
-                    </div>
-                `;
-                chatHistory = [];
-                saveChatHistory();
-                updateMemberCount();
-            }
-        }
-
-        function updateMemberCount() {
-            const count = Math.floor(Math.random() * 5) + 1;
-            document.getElementById('memberCount').textContent = count + ' người đang online';
-        }
-
-        // ===================================================================
-        // CODE POPUP - ẨN CODE
-        // ===================================================================
-        function showCodePopup() {
-            document.getElementById('codePopup').classList.add('active');
-            document.getElementById('codeInputPopup').value = '';
-            document.getElementById('codeMessage').textContent = '';
-            document.getElementById('codeInputPopup').focus();
-        }
-
-        function closeCodePopup() {
-            document.getElementById('codePopup').classList.remove('active');
-        }
-
-        function submitCode() {
-            const code = document.getElementById('codeInputPopup').value.trim();
-            const messageEl = document.getElementById('codeMessage');
-            
-            if (!code) {
-                messageEl.textContent = '⚠️ Vui lòng nhập code!';
-                messageEl.style.color = '#f5576c';
-                return;
-            }
-
-            // Code admin (ẩn)
-            if (code === 'phat215dz') {
-                userRole = 'admin';
-                const usernameInput = document.getElementById('usernameInput');
-                usernameInput.value = 'Admin';
-                currentUser = 'Admin';
-                document.getElementById('userAvatar').textContent = 'A';
-                messageEl.textContent = '✅ Kích hoạt thành công!';
-                messageEl.style.color = '#6a9955';
-                showSystemMessage('🔴 Admin đã tham gia phòng chat!');
-                closeCodePopup();
-            } 
-            // Code VIP (ẩn)
-            else if (code === 'premiumvip') {
-                userRole = 'vip';
-                const usernameInput = document.getElementById('usernameInput');
-                const name = usernameInput.value.trim() || 'VIP';
-                usernameInput.value = name + ' 👑';
-                currentUser = name + ' 👑';
-                document.getElementById('userAvatar').textContent = name.charAt(0).toUpperCase();
-                messageEl.textContent = '✅ Kích hoạt thành công!';
-                messageEl.style.color = '#ffd700';
-                showSystemMessage('💎 VIP đã tham gia phòng chat!');
-                closeCodePopup();
-            } 
-            else {
-                messageEl.textContent = '❌ Code không hợp lệ!';
-                messageEl.style.color = '#f5576c';
-            }
-        }
-
-        // Click outside to close
-        document.getElementById('codePopup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeCodePopup();
-            }
-        });
-
-        // Enter key for code input
-        document.getElementById('codeInputPopup').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                submitCode();
-            }
-        });
-
-        // ===================================================================
         // AI ASSISTANT
         // ===================================================================
         const aiChatBody = document.getElementById('aiChatBody');
@@ -3138,24 +2489,35 @@ class Dog : public Animal { void bark(); };
         }
 
         // ===================================================================
-        // USERNAME CHANGE
+        // CODE INPUT FOOTER
         // ===================================================================
-        document.getElementById('usernameInput').addEventListener('change', function() {
-            let name = this.value.trim() || 'Khách';
+        function submitFooterCode() {
+            const code = document.getElementById('codeInputFooter').value.trim();
+            const messageEl = document.getElementById('footerCodeMessage');
             
-            // Kiểm tra nếu cố tình đổi tên thành Admin
-            if (name.toLowerCase() === 'admin' && userRole !== 'admin') {
-                name = 'Khách';
-                this.value = 'Khách';
-                showSystemMessage('⚠️ Bạn không thể đổi tên thành Admin!');
+            if (!code) {
+                messageEl.textContent = '⚠️ Vui lòng nhập mã code!';
+                messageEl.className = 'code-message error';
+                return;
             }
-            
-            document.getElementById('userAvatar').textContent = name.charAt(0).toUpperCase();
-            currentUser = name;
-            const now = new Date().toLocaleTimeString('vi-VN');
-            addChatMessage('Hệ thống', `👤 ${name} đã tham gia phòng chat!`, now, true);
-            chatHistory.push({ user: 'Hệ thống', text: `👤 ${name} đã tham gia phòng chat!`, time: now, isSystem: true });
-            saveChatHistory();
+
+            if (code === 'phat215dz') {
+                messageEl.textContent = '✅ Kích hoạt thành công! Bạn đã trở thành Admin! 🎉';
+                messageEl.className = 'code-message success';
+            } else if (code === 'premiumvip') {
+                messageEl.textContent = '✅ Kích hoạt thành công! Bạn đã trở thành VIP! 👑';
+                messageEl.className = 'code-message success';
+            } else {
+                messageEl.textContent = '❌ Mã code không hợp lệ!';
+                messageEl.className = 'code-message error';
+            }
+        }
+
+        // Enter key for code input
+        document.getElementById('codeInputFooter').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                submitFooterCode();
+            }
         });
 
         // ===================================================================
@@ -3183,19 +2545,10 @@ class Dog : public Animal { void bark(); };
         // INIT
         // ===================================================================
         updateProgress('intro');
-        loadChatHistory();
-        updateMemberCount();
-        
-        const usernameInput = document.getElementById('usernameInput');
-        document.getElementById('userAvatar').textContent = usernameInput.value.charAt(0).toUpperCase();
-        currentUser = usernameInput.value;
-
-        console.log('🚀 C++ Toàn Tập với Chat Room đã sẵn sàng!');
+        console.log('🚀 C++ Toàn Tập đã sẵn sàng!');
         console.log('💡 Nhấn Ctrl + Enter để chạy code (tại tab Editor)');
         console.log('💡 Nhấn phím 1-9 để chuyển tab');
-        console.log('💬 Chat với cộng đồng học C++ trong tab "Chat Room"');
-        console.log('🤖 Hỏi AI bất kỳ câu hỏi nào về C++');
-        console.log('📘 Kết nối với chúng tôi qua các nền tảng bên dưới!');
+        console.log('💡 Nhập code ở cuối trang để kích hoạt quyền hạn đặc biệt!');
     </script>
 </body>
 </html>
